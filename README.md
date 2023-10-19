@@ -19,6 +19,8 @@ Packages:
   - [x] web
 - [x] typescript@5
 - [x] metro
+- [x] lint
+- [x] prettier
 - [ ] jest
 - [ ] storybook
 - [ ] hygen

@@ -1,7 +1,7 @@
-import React from "react";
-import { Slot, usePathname } from "expo-router";
-import { Text, View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import React from 'react';
+import { Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Slot, usePathname } from 'expo-router';
 
 function NavFooter() {
   const pathname = usePathname();
@@ -10,14 +10,13 @@ function NavFooter() {
   return (
     <View
       style={{
-        borderColor: "red",
+        borderColor: 'red',
         borderWidth: 1,
-        position: "absolute",
+        position: 'absolute',
         left: 0,
         right: 0,
         bottom,
-      }}
-    >
+      }}>
       <Text>{pathname}</Text>
     </View>
   );
@@ -25,7 +24,7 @@ function NavFooter() {
 
 export default function RootLayout() {
   return (
-    <View style={{ flex: 1, borderColor: "red", borderWidth: 1 }}>
+    <View style={{ flex: 1, borderColor: 'red', borderWidth: 1 }}>
       <Slot />
       <NavFooter />
     </View>
