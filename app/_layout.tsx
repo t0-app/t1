@@ -1,7 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { AppProviders } from 'context';
 import { Slot, usePathname } from 'expo-router';
+import { Text, View } from 'components/style';
+import './../global.js';
 
 function NavFooter() {
   const pathname = usePathname();
@@ -10,8 +12,6 @@ function NavFooter() {
   return (
     <View
       style={{
-        borderColor: 'red',
-        borderWidth: 1,
         position: 'absolute',
         left: 0,
         right: 0,
@@ -24,9 +24,9 @@ function NavFooter() {
 
 export default function RootLayout() {
   return (
-    <View style={{ flex: 1, borderColor: 'red', borderWidth: 1 }}>
+    <AppProviders>
       <Slot />
       <NavFooter />
-    </View>
+    </AppProviders>
   );
 }

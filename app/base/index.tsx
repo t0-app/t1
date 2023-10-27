@@ -1,16 +1,27 @@
-import { Link } from 'expo-router';
-import { Text, View } from 'components/style';
+import { ActivityIndicator, Text, View } from 'components/style';
+import { useCharacterQuery } from 'data/hooks/characters';
+import { Character } from 'data/model';
+import t from 'config/i18n';
 
-export default function Base() {
+export interface BaseUIProp {
+  character?: Character;
+  isLoading?: boolean;
+  errorMessage?: string;
+}
+
+export function BaseUI({ character, isLoading = false, errorMessage }: BaseUIProp) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Base - /base</Text>
-      <Link href="/(tabs)/page1" style={{ color: 'blue' }}>
-        (tab)/page1
-      </Link>
-      <Link href="/(tabs)/page2/" style={{ color: 'blue' }}>
-        (tab)/page2
-      </Link>
+      <Text>{t('base')}</Text>
+      <Text>{character?.name}</Text>
+      {isLoading ? <ActivityIndicator /> : null}
+      {errorMessage ? <Text>{errorMessage}</Text> : null}
     </View>
   );
+}
+
+export default function Base() {
+  const { data: character, isLoading, error } = useCharacterQuery({ id: 1 });
+  console.log({ error, character });
+  return <BaseUI character={character} isLoading={isLoading} errorMessage={error?.message} />;
 }
