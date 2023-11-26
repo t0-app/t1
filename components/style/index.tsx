@@ -1,28 +1,27 @@
-import {
-  ActivityIndicator as RNActivityIndicator,
-  ActivityIndicatorProps as RNActivityIndicatorProps,
-  Text as RNText,
-  TextProps as RNTextProps,
-  View as RNView,
-  ViewProps as RNViewProps,
-} from 'react-native';
+import styled from 'styled-components/native';
 
-const dStyle = { borderWidth: 1, borderColor: 'gray' };
+export const Container = styled.View`
+  flex: 1;
+`;
 
-export interface ViewProps extends RNViewProps {}
+export const SContainer = styled.SafeAreaView`
+  flex: 1;
+  border-width: 1px;
+  border-color: ${({ theme }) => theme.color.gray.c500};
+`;
 
-export function View({ ...props }: ViewProps) {
-  return <RNView style={dStyle} {...props} />;
-}
+export const SContent = styled.View`
+  padding: 16px;
+`;
 
-export interface TextProps extends RNTextProps {}
-
-export function Text({ ...props }: ViewProps) {
-  return <RNText style={dStyle} {...props} />;
-}
-
-export interface ActivityIndicatorProps extends RNActivityIndicatorProps {}
-
-export function ActivityIndicator({ ...props }: ViewProps) {
-  return <RNActivityIndicator style={dStyle} {...props} />;
-}
+export const Text = styled.Text<{ f?: boolean; l?: boolean; b?: boolean; s?: number }>`
+  ${({ f }) => f && 'flex: 1;'}
+  font-family: ${({ l, b, theme }) =>
+    l
+      ? theme.fontFamily.inter.light
+      : b
+      ? theme.fontFamily.inter.bold
+      : theme.fontFamily.inter.regular};
+  color: ${({ theme }) => theme.color.gray.c900};
+  font-size: ${({ s = 16 }) => s}px;
+`;

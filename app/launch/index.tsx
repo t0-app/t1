@@ -1,16 +1,23 @@
 import { Link } from 'expo-router';
-import { Text, View } from 'components/style';
+import { NavHeader } from 'components/NavHeader';
+import { SContainer, SContent } from 'components/style';
+import t from 'config/i18n';
+
+export interface LaunchUIProp {}
+
+export function LaunchUI({}: LaunchUIProp) {
+  return (
+    <SContainer>
+      <NavHeader path="launch" name={t('launch')} />
+      <SContent>
+        <Link href="/base/" style={{ color: 'blue' }}>
+          /base
+        </Link>
+      </SContent>
+    </SContainer>
+  );
+}
 
 export default function Launch() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Launch - /</Text>
-      <Link href="/(tabs)/page1" style={{ color: 'blue' }}>
-        (tab)/page1
-      </Link>
-      <Link href="/(tabs)/page2/" style={{ color: 'blue' }}>
-        (tab)/page2
-      </Link>
-    </View>
-  );
+  return <LaunchUI />;
 }

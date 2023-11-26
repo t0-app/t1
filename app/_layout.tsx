@@ -1,32 +1,35 @@
-import React from 'react';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import React, { useCallback } from 'react';
+import { Inter_300Light, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 import { AppProviders } from 'context';
-import { Slot, usePathname } from 'expo-router';
-import { Text, View } from 'components/style';
+import { useFonts } from 'expo-font';
+import { Slot, SplashScreen } from 'expo-router';
+import { Container } from 'components/style';
 import './../global.js';
 
-function NavFooter() {
-  const pathname = usePathname();
-  const { bottom } = useSafeAreaInsets();
-
-  return (
-    <View
-      style={{
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        bottom,
-      }}>
-      <Text>{pathname}</Text>
-    </View>
-  );
-}
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    Inter300: Inter_300Light,
+    Inter400: Inter_400Regular,
+    Inter700: Inter_700Bold,
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <AppProviders>
-      <Slot />
-      <NavFooter />
-    </AppProviders>
+    <Container onLayout={onLayoutRootView}>
+      <AppProviders>
+        <Slot />
+      </AppProviders>
+    </Container>
   );
 }

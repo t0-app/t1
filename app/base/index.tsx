@@ -1,27 +1,23 @@
-import { ActivityIndicator, Text, View } from 'components/style';
-import { useCharacterQuery } from 'data/hooks/characters';
-import { Character } from 'data/model';
+import { Link } from 'expo-router';
+import { NavHeader } from 'components/NavHeader';
+import { SContainer, SContent } from 'components/style';
 import t from 'config/i18n';
 
-export interface BaseUIProp {
-  character?: Character;
-  isLoading?: boolean;
-  errorMessage?: string;
-}
+export interface BaseUIProp {}
 
-export function BaseUI({ character, isLoading = false, errorMessage }: BaseUIProp) {
+export function BaseUI({}: BaseUIProp) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>{t('base')}</Text>
-      <Text>{character?.name}</Text>
-      {isLoading ? <ActivityIndicator /> : null}
-      {errorMessage ? <Text>{errorMessage}</Text> : null}
-    </View>
+    <SContainer>
+      <NavHeader path="base" name={t('base')} />
+      <SContent>
+        <Link href="/" style={{ color: 'blue' }}>
+          /
+        </Link>
+      </SContent>
+    </SContainer>
   );
 }
 
 export default function Base() {
-  const { data: character, isLoading, error } = useCharacterQuery({ id: 1 });
-  console.log({ error, character });
-  return <BaseUI character={character} isLoading={isLoading} errorMessage={error?.message} />;
+  return <BaseUI />;
 }

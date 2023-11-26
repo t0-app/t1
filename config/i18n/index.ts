@@ -4,6 +4,7 @@ import { I18n, Scope, TranslateOptions } from 'i18n-js';
 const i18n = new I18n({
   en: {
     base: 'Base',
+    launch: 'Launch',
   },
 });
 

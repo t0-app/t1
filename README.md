@@ -21,6 +21,7 @@ Packages:
 - [x] metro
 - [x] lint
 - [x] prettier
+- [x] styled-components
 - [ ] jest
 - [ ] storybook
 - [ ] hygen
