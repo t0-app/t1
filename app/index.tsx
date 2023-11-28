@@ -1,3 +1,3 @@
-import Launch from './launch';
+import Characters from './(tabs)/characters';
 
-export default Launch;
+export default Characters;

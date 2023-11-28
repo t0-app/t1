@@ -25,7 +25,7 @@ Packages:
 - [ ] jest
 - [ ] storybook
 - [ ] hygen
-- [ ] react-query
+- [x] react-query
 - [ ] i18n
 
 :bulb: `main` branch keeps the chore structure for t1, on other branchs we add custom integrations like `with-auth`, `with-firebase`, `with-tailwind`, etc

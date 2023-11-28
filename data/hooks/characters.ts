@@ -32,7 +32,7 @@ export function useCharactersQuery({
 
 //useCharacterQuery
 type CharacterQueryOptions = {
-  id: number;
+  id: string;
   options?: Omit<UseQueryOptions<CharacterData, AxiosError>, 'queryKey' | 'queryFn'>;
 };
 

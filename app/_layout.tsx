@@ -1,14 +1,21 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Inter_300Light, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 import { AppProviders } from 'context';
 import { useFonts } from 'expo-font';
-import { Slot, SplashScreen } from 'expo-router';
+import { Slot, SplashScreen, useGlobalSearchParams, usePathname } from 'expo-router';
 import { Container } from 'components/style';
 import './../global.js';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const pathname = usePathname();
+  const params = useGlobalSearchParams();
+
+  useEffect(() => {
+    console.log('TODO: track', { pathname, params });
+  }, [pathname, params]);
+
   const [fontsLoaded] = useFonts({
     Inter300: Inter_300Light,
     Inter400: Inter_400Regular,

@@ -15,7 +15,9 @@ module.exports = function (api) {
           },
         },
       ],
-      '@babel/plugin-transform-private-methods',
+      '@babel/plugin-transform-flow-strip-types',
+      '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-private-methods',
       '@babel/plugin-transform-class-properties',
     ],
   };

@@ -3,6 +3,16 @@ export interface CharacterLocation {
   url: string;
 }
 
+export interface Location {
+  id: number;
+  name: string;
+  type: string;
+  dimension: string;
+  residents: string[];
+  url: string;
+  created: Date;
+}
+
 export interface Character {
   id: number;
   name: string;
@@ -14,6 +24,16 @@ export interface Character {
   gender: string;
   episode: string[];
   image: string;
+  url: string;
+  created: string;
+}
+
+export interface Episode {
+  id: number;
+  name: string;
+  episode: string;
+  air_date: string;
+  characters: string[];
   url: string;
   created: string;
 }

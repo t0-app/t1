@@ -6,22 +6,31 @@ export const Container = styled.View`
 
 export const SContainer = styled.SafeAreaView`
   flex: 1;
-  border-width: 1px;
-  border-color: ${({ theme }) => theme.color.gray.c500};
 `;
 
 export const SContent = styled.View`
   padding: 16px;
 `;
 
-export const Text = styled.Text<{ f?: boolean; l?: boolean; b?: boolean; s?: number }>`
-  ${({ f }) => f && 'flex: 1;'}
-  font-family: ${({ l, b, theme }) =>
-    l
+interface IText {
+  h1?: boolean;
+  title?: boolean;
+  body?: boolean;
+  light?: boolean;
+}
+
+export const Text = styled.Text<IText>`
+  ${({ h1, title }) => (h1 || title) && 'flex: 1;'}
+  font-family: ${({ h1, title, light, theme }) =>
+    light
       ? theme.fontFamily.inter.light
-      : b
+      : h1 ?? title
       ? theme.fontFamily.inter.bold
       : theme.fontFamily.inter.regular};
   color: ${({ theme }) => theme.color.gray.c900};
-  font-size: ${({ s = 16 }) => s}px;
+  font-size: ${({ h1, title, light }) => (light ? 11 : h1 ? 24 : title ? 20 : 14)}px;
 `;
+
+export const Loading = styled.ActivityIndicator``;
+
+export const RefreshControl = styled.RefreshControl``;

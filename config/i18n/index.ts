@@ -5,6 +5,8 @@ const i18n = new I18n({
   en: {
     base: 'Base',
     launch: 'Launch',
+    character: 'Personagem',
+    characters: 'Personagens',
   },
 });
 

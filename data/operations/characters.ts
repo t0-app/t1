@@ -16,7 +16,7 @@ export async function getCharacters({ page }: CharactersVars): Promise<Character
 //getCharacter
 export type CharacterData = Character;
 
-export async function getCharacter(id: number): Promise<CharacterData> {
+export async function getCharacter(id: string): Promise<CharacterData> {
   const { data } = await axiosInstance.get<CharacterData>(`/character/${id}`);
   return data;
 }
