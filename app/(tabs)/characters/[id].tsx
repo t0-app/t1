@@ -6,12 +6,12 @@ import { useCharacterQuery } from 'data/hooks/characters';
 import { Character } from 'data/model';
 import t from 'config/i18n';
 
-export interface CharacterUIProp {
+export interface CharacterUIProps {
   character?: Character;
   isLoading?: boolean;
 }
 
-export function CharacterUI({ character, isLoading }: CharacterUIProp) {
+export function CharacterUI({ character, isLoading }: CharacterUIProps) {
   return (
     <SContainer>
       <NavHeader path="character" name={t('character')} />

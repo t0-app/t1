@@ -15,12 +15,13 @@ const PathView = styled.View`
   right: 8px;
 `;
 
-export interface NavHeaderProp {
+export interface NavHeaderProps {
   name: string;
   path?: string;
+  onGoBack?: () => void;
 }
 
-export function NavHeader({ name, path }: NavHeaderProp) {
+export function NavHeader({ name, path, onGoBack }: NavHeaderProps) {
   return (
     <Container>
       <Text ttype="h1">{name}</Text>

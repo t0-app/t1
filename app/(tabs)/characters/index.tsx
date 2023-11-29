@@ -7,7 +7,7 @@ import { useCharactersQuery } from 'data/hooks/characters';
 import { Character } from 'data/model';
 import t from 'config/i18n';
 
-export interface CharactersUIProp {
+export interface CharactersUIProps {
   characters: Character[];
   isLoading?: boolean;
   isFetching?: boolean;
@@ -23,7 +23,7 @@ export function CharactersUI({
   onRefresh,
   onSelectedCharacter,
   onFetchMore,
-}: CharactersUIProp) {
+}: CharactersUIProps) {
   const renderItem = ({ item: character }: { item: Character }) => {
     return (
       <Card

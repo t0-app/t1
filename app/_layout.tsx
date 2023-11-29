@@ -6,6 +6,8 @@ import { Slot, SplashScreen, useGlobalSearchParams, usePathname } from 'expo-rou
 import { Container } from 'components/style';
 import './../global.js';
 
+const STORYBOOK_ENABLED = __DEV__ && true;
+
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -30,6 +32,16 @@ export default function RootLayout() {
 
   if (!fontsLoaded) {
     return null;
+  }
+
+  if (STORYBOOK_ENABLED) {
+    const StorybookComponent = require('./../.storybook').default;
+
+    return (
+      <Container onLayout={onLayoutRootView}>
+        <StorybookComponent />
+      </Container>
+    );
   }
 
   return (

@@ -23,7 +23,7 @@ Packages:
 - [x] prettier
 - [x] styled-components
 - [x] jest
-- [ ] storybook
+- [x] storybook
 - [ ] hygen
 - [x] react-query
 - [x] i18n

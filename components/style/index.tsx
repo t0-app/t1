@@ -45,6 +45,8 @@ export const Text = styled.Text<IText>`
   font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
 `;
 
-export const Loading = styled.ActivityIndicator``;
+export const Loading = styled.ActivityIndicator`
+  padding-vertical: 16px;
+`;
 
 export const RefreshControl = styled.RefreshControl``;

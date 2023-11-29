@@ -12,12 +12,16 @@
     "test": "jest --watch --coverage=false --changedSince=origin/main",
     "test:debug": "jest -o --watch --coverage=false",
     "test:final": "jest",
-    "ci:check": "yarn lint && yarn ts:check && yarn test:final"
+    "ci:check": "yarn lint && yarn ts:check && yarn test:final",
+    "sb:load": "sb-rn-get-stories",
+    "sb:watcher": "sb-rn-watcher"
   },
   "dependencies": {
     "@babel/plugin-transform-class-properties": "^7.22.5",
     "@expo-google-fonts/inter": "^0.2.3",
     "@expo/webpack-config": "^19.0.0",
+    "@react-native-async-storage/async-storage": "1.18.2",
+    "@storybook/core-common": "6.5.16",
     "axios": "^1.5.1",
     "expo": "~49.0.13",
     "expo-constants": "~14.4.2",
@@ -43,6 +47,9 @@
     "@babel/core": "^7.20.0",
     "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@babel/plugin-transform-private-methods": "^7.22.5",
+    "@storybook/addon-ondevice-actions": "^6.5.7",
+    "@storybook/addon-ondevice-controls": "^6.5.7",
+    "@storybook/react-native": "^6.5.7",
     "@testing-library/jest-native": "^5.4.3",
     "@testing-library/react-native": "^12.3.0",
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
@@ -74,10 +81,12 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{ts,tsx}",
+      "!**/*.stories.tsx",
       "!**/coverage/**",
       "!**/node_modules/**",
       "!**/babel.config.js",
-      "!**/jest.setup.js"
+      "!**/jest.setup.js",
+      "!**/.storybook/**"
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"

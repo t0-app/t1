@@ -21,13 +21,13 @@ const Content = styled.View`
   flex: 1;
 `;
 
-export interface CardProp {
+export interface CardProps {
   testID?: string;
   character: Character;
   onPress?: () => void;
 }
 
-export function Card({ testID, character, onPress }: CardProp) {
+export function Card({ testID, character, onPress }: CardProps) {
   return (
     <Container testID={testID} onPress={onPress} disabled={!onPress}>
       <Content>
