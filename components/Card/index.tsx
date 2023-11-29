@@ -31,12 +31,12 @@ export function Card({ testID, character, onPress }: CardProp) {
   return (
     <Container testID={testID} onPress={onPress} disabled={!onPress}>
       <Content>
-        <Text title>{character.name}</Text>
-        <Text light>{`status: ${character.status}`}</Text>
-        <Text light>{`species: ${character.species}`}</Text>
-        <Text light>{`type: ${character.type}`}</Text>
-        <Text light>{`origin: ${character.origin.name}`}</Text>
-        <Text light>{`location: ${character.location.name}`}</Text>
+        <Text ttype="h2">{character.name}</Text>
+        <Text ttype="light">{`status: ${character.status}`}</Text>
+        <Text ttype="light">{`species: ${character.species}`}</Text>
+        <Text ttype="light">{`type: ${character.type}`}</Text>
+        <Text ttype="light">{`origin: ${character.origin.name}`}</Text>
+        <Text ttype="light">{`location: ${character.location.name}`}</Text>
       </Content>
       <Image source={{ uri: character.image }} />
     </Container>

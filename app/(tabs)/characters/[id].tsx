@@ -31,7 +31,6 @@ export function CharacterUI({ character, isLoading }: CharacterUIProp) {
 
 export default function CharacterDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  console.log({ id });
   const { data: character, isLoading } = useCharacterQuery({ id });
   return <CharacterUI character={character} isLoading={isLoading} />;
 }

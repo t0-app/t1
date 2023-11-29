@@ -1,56 +1,34 @@
-// import { AppProviders } from 'context/index';
-// import { renderRouter, screen } from 'expo-router/testing-library';
-// import { HttpResponse, http } from 'msw';
-// import { CHARACTER_1 } from 'data/mock';
-// import { CharacterData } from 'data/operations/characters';
-// import Characters from '../';
-// import CharacterDetail from '../[id]';
+import { render, screen } from '@testing-library/react-native';
+import { AppProviders } from 'context/index';
+import { useLocalSearchParams } from 'expo-router';
+import { HttpResponse, http } from 'msw';
+import { CHARACTER_1 } from 'data/mock';
+import { CharacterData } from 'data/operations/characters';
+import CharacterDetail from '../[id]';
 
-// http.get('/character', () => {
-//   return HttpResponse.json<CharacterData>(CHARACTER_1);
-// });
+jest.mock('expo-router');
 
-// http.get('/character', () => {
-//   return new HttpResponse(null, {
-//     status: 404,
-//     statusText: 'Out Of Apples',
-//   });
-// });
+const id = CHARACTER_1.id;
 
-// describe('CharacterDetail', () => {
-//   beforeEach(() => {
-//     jest.clearAllMocks();
-//   });
+(useLocalSearchParams as jest.Mock).mockReturnValue({
+  id,
+});
 
-//   test('should show character name on success response', async () => {
-//     renderRouter(
-//       {
-//         index: Characters,
-//         '[id]': CharacterDetail,
-//       },
-//       {
-//         initialUrl: '/characters',
-//         wrapper: AppProviders,
-//       },
-//     );
+http.get(`/character/${id}`, () => {
+  return HttpResponse.json<CharacterData>(CHARACTER_1);
+});
 
-//     const name = await screen.findByText(CHARACTER_1.name);
-//     expect(name).toBeTruthy();
-//   });
+describe('CharacterDetail', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
-//   test('should show error message on error', async () => {
-//     const errorMessage = 'Error message';
-//     renderRouter(
-//       {
-//         index: Characters,
-//         '[id]': CharacterDetail,
-//       },
-//       {
-//         wrapper: AppProviders,
-//       },
-//     );
+  test('should show character name', async () => {
+    render(<CharacterDetail />, {
+      wrapper: AppProviders,
+    });
 
-//     const error = await screen.findByText(errorMessage);
-//     expect(name).toBeTruthy();
-//   });
-// });
+    const name = await screen.findByText(CHARACTER_1.name);
+    expect(name).toBeTruthy();
+  });
+});

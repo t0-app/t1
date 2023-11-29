@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1698163537225" clover="3.2.0">
-  <project timestamp="1698163537225" name="All files">
-    <metrics statements="37" coveredstatements="22" conditionals="10" coveredconditionals="4" methods="19" coveredmethods="10" elements="66" coveredelements="36" complexity="0" loc="37" ncloc="37" packages="13" files="16" classes="16"/>
+<coverage generated="1701269213139" clover="3.2.0">
+  <project timestamp="1701269213139" name="All files">
+    <metrics statements="83" coveredstatements="67" conditionals="28" coveredconditionals="15" methods="37" coveredmethods="31" elements="148" coveredelements="113" complexity="0" loc="83" ncloc="83" packages="13" files="18" classes="18"/>
     <package name="t1">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="expo-env.d.ts" path="/Users/rocalicode/Documents/dev/t1/expo-env.d.ts">
@@ -15,113 +15,165 @@
       </file>
     </package>
     <package name="t1.app">
-      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="_layout.tsx" path="/Users/rocalicode/Documents/dev/t1/app/_layout.tsx">
-        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
       </file>
       <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/app/index.tsx">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="t1.app.(tabs).page1">
-      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/app/(tabs)/page1/index.tsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
+    <package name="t1.app.(tabs).characters">
+      <metrics statements="16" coveredstatements="13" conditionals="12" coveredconditionals="8" methods="13" coveredmethods="10"/>
+      <file name="[id].tsx" path="/Users/rocalicode/Documents/dev/t1/app/(tabs)/characters/[id].tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/app/(tabs)/characters/index.tsx">
+        <metrics statements="12" coveredstatements="9" conditionals="8" coveredconditionals="5" methods="11" coveredmethods="8"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="45" count="13" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="62" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="t1.app.(tabs).page2">
-      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/app/(tabs)/page2/index.tsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="t1.app.base">
-      <metrics statements="3" coveredstatements="3" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
-      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/app/base/index.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="5" coveredconditionals="3" methods="2" coveredmethods="2"/>
+    <package name="t1.components.Card">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/components/Card/index.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="9" count="11" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
-        <line num="25" count="2" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="31" count="11" type="stmt"/>
       </file>
     </package>
-    <package name="t1.app.launch">
-      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/app/launch/index.tsx">
-        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
+    <package name="t1.components.NavHeader">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/components/NavHeader/index.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
       </file>
     </package>
     <package name="t1.components.style">
-      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="16" coveredstatements="16" conditionals="5" coveredconditionals="2" methods="6" coveredmethods="6"/>
       <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/components/style/index.tsx">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <metrics statements="16" coveredstatements="16" conditionals="5" coveredconditionals="2" methods="6" coveredmethods="6"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="74" type="stmt"/>
+        <line num="28" count="74" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="74" type="stmt"/>
+        <line num="38" count="74" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="74" type="cond" truecount="2" falsecount="1"/>
+        <line num="43" count="74" type="cond" truecount="0" falsecount="1"/>
+        <line num="44" count="74" type="stmt"/>
+        <line num="45" count="74" type="cond" truecount="0" falsecount="1"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
       </file>
     </package>
     <package name="t1.config.i18n">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/Users/rocalicode/Documents/dev/t1/config/i18n/index.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="t1.config.theme">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/config/theme/index.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="85" count="2" type="stmt"/>
+        <line num="86" count="2" type="stmt"/>
+        <line num="87" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="88" count="2" type="stmt"/>
+      </file>
+      <file name="types.d.ts" path="/Users/rocalicode/Documents/dev/t1/config/theme/types.d.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="t1.context">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="/Users/rocalicode/Documents/dev/t1/context/index.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
       </file>
     </package>
     <package name="t1.data">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="api.ts" path="/Users/rocalicode/Documents/dev/t1/data/api.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
       </file>
       <file name="mock.ts" path="/Users/rocalicode/Documents/dev/t1/data/mock.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
       </file>
       <file name="model.ts" path="/Users/rocalicode/Documents/dev/t1/data/model.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="t1.data.hooks">
-      <metrics statements="7" coveredstatements="1" conditionals="5" coveredconditionals="1" methods="5" coveredmethods="2"/>
+      <metrics statements="7" coveredstatements="6" conditionals="5" coveredconditionals="4" methods="5" coveredmethods="5"/>
       <file name="characters.ts" path="/Users/rocalicode/Documents/dev/t1/data/hooks/characters.ts">
-        <metrics statements="7" coveredstatements="1" conditionals="5" coveredconditionals="1" methods="5" coveredmethods="2"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="20" count="0" type="stmt"/>
+        <metrics statements="7" coveredstatements="6" conditionals="5" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="3" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="40" count="2" type="stmt"/>
       </file>
     </package>
     <package name="t1.data.operations">
-      <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="characters.ts" path="/Users/rocalicode/Documents/dev/t1/data/operations/characters.ts">
-        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
       </file>

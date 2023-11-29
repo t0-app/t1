@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { DefaultTheme } from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
@@ -12,23 +12,37 @@ export const SContent = styled.View`
   padding: 16px;
 `;
 
+type TType = 'h1' | 'h2' | 'body' | 'light';
+
 interface IText {
-  h1?: boolean;
-  title?: boolean;
-  body?: boolean;
-  light?: boolean;
+  ttype?: TType;
 }
 
+const getFontFamily = (ttype: TType, theme: DefaultTheme): string => {
+  const fontFamilyMap: { [key in TType]: string } = {
+    h1: theme.fontFamily.inter.bold,
+    h2: theme.fontFamily.inter.bold,
+    body: theme.fontFamily.inter.regular,
+    light: theme.fontFamily.inter.light,
+  };
+  return fontFamilyMap[ttype];
+};
+
+const getFontSize = (ttype: TType): string => {
+  const fontFamilyMap: { [key in TType]: string } = {
+    h1: '24px',
+    h2: '20px',
+    body: '14px',
+    light: '11px',
+  };
+  return fontFamilyMap[ttype];
+};
+
 export const Text = styled.Text<IText>`
-  ${({ h1, title }) => (h1 || title) && 'flex: 1;'}
-  font-family: ${({ h1, title, light, theme }) =>
-    light
-      ? theme.fontFamily.inter.light
-      : h1 ?? title
-      ? theme.fontFamily.inter.bold
-      : theme.fontFamily.inter.regular};
+  ${({ ttype = 'body' }) => ['h1', 'h2']?.includes(ttype) && 'flex: 1;'}
+  font-family: ${({ ttype = 'body', theme }) => getFontFamily(ttype, theme)};
   color: ${({ theme }) => theme.color.gray.c900};
-  font-size: ${({ h1, title, light }) => (light ? 11 : h1 ? 24 : title ? 20 : 14)}px;
+  font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
 `;
 
 export const Loading = styled.ActivityIndicator``;

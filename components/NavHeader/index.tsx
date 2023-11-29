@@ -9,6 +9,12 @@ const Container = styled.View`
   align-items: center;
 `;
 
+const PathView = styled.View`
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+`;
+
 export interface NavHeaderProp {
   name: string;
   path?: string;
@@ -17,8 +23,10 @@ export interface NavHeaderProp {
 export function NavHeader({ name, path }: NavHeaderProp) {
   return (
     <Container>
-      <Text h1>{name}</Text>
-      <Text light>{`/${path}`}</Text>
+      <Text ttype="h1">{name}</Text>
+      <PathView>
+        <Text ttype="light">{`/${path}`}</Text>
+      </PathView>
     </Container>
   );
 }

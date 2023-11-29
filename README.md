@@ -5,9 +5,9 @@ Template project (-1)
 Folder structure:
 
 - [x] `/app`
-- [ ] `/components`
-- [ ] `/data`
-- [ ] `/config`
+- [x] `/components`
+- [x] `/data`
+- [x] `/config`
 
 Packages:
 
@@ -22,11 +22,11 @@ Packages:
 - [x] lint
 - [x] prettier
 - [x] styled-components
-- [ ] jest
+- [x] jest
 - [ ] storybook
 - [ ] hygen
 - [x] react-query
-- [ ] i18n
+- [x] i18n
 
 :bulb: `main` branch keeps the chore structure for t1, on other branchs we add custom integrations like `with-auth`, `with-firebase`, `with-tailwind`, etc
 

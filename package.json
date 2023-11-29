@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "test": "jest --watch --coverage=false --changedSince=origin/main",
     "test:debug": "jest -o --watch --coverage=false",
-    "test:final": "jest"
+    "test:final": "jest",
+    "ci:check": "yarn lint && yarn ts:check && yarn test:final"
   },
   "dependencies": {
     "@babel/plugin-transform-class-properties": "^7.22.5",
