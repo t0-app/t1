@@ -84,8 +84,8 @@
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "app/**/*.{ts,tsx}",
-      "!app/**/_layout.{ts,tsx}"
+      "src/app/**/*.{ts,tsx}",
+      "!src/app/**/_layout.{ts,tsx}"
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"

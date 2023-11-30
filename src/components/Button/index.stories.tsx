@@ -1,17 +1,15 @@
----
-to: src/components/<%= name %>/index.stories.tsx
----
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import { <%= name %>, <%= name %>Props } from './';
+import { Button, ButtonProps } from './';
 
-const meta: Meta<StoryListProps<<%= name %>Props>> = {
-  title: 'components/<%= name %>',
+const meta: Meta<StoryListProps<ButtonProps>> = {
+  title: 'components/Button',
   component: StoryList,
   args: {
-    Component: <%= name %>,
+    Component: Button,
+    flexWrap: true,
   },
   decorators: [
     (Story) => (
@@ -24,16 +22,24 @@ const meta: Meta<StoryListProps<<%= name %>Props>> = {
 
 export default meta;
 
-type Story = StoryObj<StoryListProps<<%= name %>Props>>;
+type Story = StoryObj<StoryListProps<ButtonProps>>;
 
 export const Default: Story = {
   args: {
     items: [
       {
-        text: '<%= name %> 1',
+        text: 'Login',
       },
       {
-        text: '<%= name %> 2',
+        text: 'Signup',
+      },
+      {
+        text: 'Login',
+        type: 'outline',
+      },
+      {
+        text: 'Signup',
+        type: 'outline',
       },
     ],
   },

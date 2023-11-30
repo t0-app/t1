@@ -1,6 +1,3 @@
----
-to: src/components/<%= name %>/index.tsx
----
 import styled from 'styled-components/native';
 import { Text } from 'src/components/style';
 import t from 'src/config/i18n';
@@ -12,15 +9,15 @@ const Container = styled.Pressable`
   align-items: center;
 `;
 
-export interface <%= name %>Props {
+export interface BaseProps {
   text: string;
   onPress?: () => void;
 }
 
-export function <%= name %>({ text, onPress }: <%= name %>Props) {
+export function Base({ text, onPress }: BaseProps) {
   return (
     <Container onPress={onPress}>
-      <Text ttype="h2">{t('<%= name %>')}</Text>
+      <Text ttype="h2">{t('Base')}</Text>
       <Text>{text}</Text>
     </Container>
   );

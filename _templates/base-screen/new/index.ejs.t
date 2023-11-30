@@ -1,8 +1,8 @@
 ---
-to: app/<%= h.changeCase.paramCase(name) %>/index.tsx
+to: src/app/<%= h.changeCase.paramCase(name) %>/index.tsx
 ---
-import <%= name %>UI from 'screens/<%= h.changeCase.paramCase(name) %>';
-import { useCharacterQuery } from 'data/hooks/characters';
+import { useCharacterQuery } from 'src/data/hooks/characters';
+import <%= name %>UI from 'src/screens/<%= h.changeCase.paramCase(name) %>';
 
 export default function <%= name %>() {
   const id = '1';

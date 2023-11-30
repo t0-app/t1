@@ -1,15 +1,15 @@
----
-to: src/screens/<%= h.changeCase.paramCase(name) %>/index.stories.tsx
----
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { ThemeWrapper } from 'src/config/theme';
 import { CHARACTER_1 } from 'src/data/mock';
-import <%= name %>UI, { <%= name %>UIProps } from './';
+import CharacterUI, { CharacterUIProps } from './';
 
-const meta: Meta<<%= name %>UIProps> = {
-  title: 'screens/<%= h.changeCase.paramCase(name) %>',
-  component: <%= name %>UI,
+const meta: Meta<CharacterUIProps> = {
+  title: 'screens/Character',
+  component: CharacterUI,
+  args: {
+    onGoBack: () => {},
+  },
   decorators: [
     (Story) => (
       <ThemeWrapper>
@@ -21,7 +21,7 @@ const meta: Meta<<%= name %>UIProps> = {
 
 export default meta;
 
-type Story = StoryObj<<%= name %>UIProps>;
+type Story = StoryObj<CharacterUIProps>;
 
 export const Default: Story = {
   args: {

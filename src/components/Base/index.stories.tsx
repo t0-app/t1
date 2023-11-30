@@ -1,17 +1,14 @@
----
-to: src/components/<%= name %>/index.stories.tsx
----
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import { <%= name %>, <%= name %>Props } from './';
+import { Base, BaseProps } from './';
 
-const meta: Meta<StoryListProps<<%= name %>Props>> = {
-  title: 'components/<%= name %>',
+const meta: Meta<StoryListProps<BaseProps>> = {
+  title: 'components/Base',
   component: StoryList,
   args: {
-    Component: <%= name %>,
+    Component: Base,
   },
   decorators: [
     (Story) => (
@@ -24,16 +21,16 @@ const meta: Meta<StoryListProps<<%= name %>Props>> = {
 
 export default meta;
 
-type Story = StoryObj<StoryListProps<<%= name %>Props>>;
+type Story = StoryObj<StoryListProps<BaseProps>>;
 
 export const Default: Story = {
   args: {
     items: [
       {
-        text: '<%= name %> 1',
+        text: 'Base 1',
       },
       {
-        text: '<%= name %> 2',
+        text: 'Base 2',
       },
     ],
   },
