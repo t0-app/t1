@@ -12,10 +12,18 @@ export const SContent = styled.View`
   padding: 16px;
 `;
 
+export const SCContent = styled.View`
+  flex: 1;
+  padding: 16px;
+  align-items: center;
+  justify-content: center;
+`;
+
 type TType = 'h1' | 'h2' | 'body' | 'light';
 
 interface IText {
   ttype?: TType;
+  center?: boolean;
 }
 
 const getFontFamily = (ttype: TType, theme: DefaultTheme): string => {
@@ -43,6 +51,7 @@ export const Text = styled.Text<IText>`
   font-family: ${({ ttype = 'body', theme }) => getFontFamily(ttype, theme)};
   color: ${({ theme }) => theme.color.gray.c900};
   font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
+  ${({ center }) => center && 'text-align: center;'}
 `;
 
 export const Loading = styled.ActivityIndicator`

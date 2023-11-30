@@ -1,8 +1,8 @@
 import { FlatList } from 'react-native';
-import { Link, router } from 'expo-router';
+import { router } from 'expo-router';
 import { Card } from 'components/Card';
 import { NavHeader } from 'components/NavHeader';
-import { Loading, RefreshControl, SContainer, SContent } from 'components/style';
+import { Loading, RefreshControl, SContainer } from 'components/style';
 import { useCharactersQuery } from 'data/hooks/characters';
 import { Character } from 'data/model';
 import t from 'config/i18n';
@@ -46,11 +46,6 @@ export function CharactersUI({
         onEndReachedThreshold={0.3}
         onEndReached={() => onFetchMore()}
       />
-      <SContent>
-        <Link href="/" style={{ color: 'blue' }}>
-          /
-        </Link>
-      </SContent>
     </SContainer>
   );
 }

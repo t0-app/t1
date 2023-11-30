@@ -45,10 +45,14 @@ if (parameters) {
 
 const getStories = () => {
   return {
+    "./components/Base/index.stories.tsx": require("../components/Base/index.stories.tsx"),
+    "./components/ButtonIcon/index.stories.tsx": require("../components/ButtonIcon/index.stories.tsx"),
     "./components/Card/index.stories.tsx": require("../components/Card/index.stories.tsx"),
     "./components/NavHeader/index.stories.tsx": require("../components/NavHeader/index.stories.tsx"),
     "./app/(tabs)/characters/[id].stories.tsx": require("../app/(tabs)/characters/[id].stories.tsx"),
     "./app/(tabs)/characters/index.stories.tsx": require("../app/(tabs)/characters/index.stories.tsx"),
+    "./app/base/index.stories.tsx": require("../app/base/index.stories.tsx"),
+    "./app/launch/index.stories.tsx": require("../app/launch/index.stories.tsx"),
   };
 };
 

@@ -1,15 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'components/helper';
-import { CHARACTER_1, CHARACTER_2 } from 'data/mock';
 import { ThemeWrapper } from 'config/theme';
-import { Card, CardProps } from './';
+import { Base, BaseProps } from './';
 
-const meta: Meta<StoryListProps<CardProps>> = {
-  title: 'components/Card',
+const meta: Meta<StoryListProps<BaseProps>> = {
+  title: 'components/Base',
   component: StoryList,
   args: {
-    Component: Card,
+    Component: Base,
   },
   decorators: [
     (Story) => (
@@ -22,16 +21,16 @@ const meta: Meta<StoryListProps<CardProps>> = {
 
 export default meta;
 
-type Story = StoryObj<StoryListProps<CardProps>>;
+type Story = StoryObj<StoryListProps<BaseProps>>;
 
 export const Default: Story = {
   args: {
     items: [
       {
-        character: CHARACTER_1,
+        text: 'Base 1',
       },
       {
-        character: CHARACTER_2,
+        text: 'Base 2',
       },
     ],
   },

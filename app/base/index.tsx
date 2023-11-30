@@ -1,4 +1,4 @@
-import { router, useLocalSearchParams } from 'expo-router';
+import { router } from 'expo-router';
 import { Card } from 'components/Card';
 import { NavHeader } from 'components/NavHeader';
 import { Loading, SContainer } from 'components/style';
@@ -6,13 +6,13 @@ import { useCharacterQuery } from 'data/hooks/characters';
 import { Character } from 'data/model';
 import t from 'config/i18n';
 
-export interface CharacterUIProps {
+export interface BaseUIProps {
   character?: Character;
   isLoading?: boolean;
   onGoBack: () => void;
 }
 
-export function CharacterUI({ character, isLoading, onGoBack }: CharacterUIProps) {
+export function BaseUI({ character, isLoading, onGoBack }: BaseUIProps) {
   return (
     <SContainer>
       <NavHeader path="character" name={t('character')} onGoBack={onGoBack} />
@@ -25,8 +25,9 @@ export function CharacterUI({ character, isLoading, onGoBack }: CharacterUIProps
   );
 }
 
-export default function CharacterDetail() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+export default function Base() {
+  const id = '1';
+  //   const { id } = useLocalSearchParams<{ id: string }>();
   const { data: character, isLoading } = useCharacterQuery({ id });
-  return <CharacterUI character={character} isLoading={isLoading} onGoBack={() => router.back()} />;
+  return <BaseUI character={character} isLoading={isLoading} onGoBack={() => router.back()} />;
 }

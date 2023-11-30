@@ -5,7 +5,7 @@ import { ThemeWrapper } from 'config/theme';
 import { NavHeader, NavHeaderProps } from './';
 
 const meta: Meta<StoryListProps<NavHeaderProps>> = {
-  title: 'NavHeader',
+  title: 'components/NavHeader',
   component: StoryList,
   args: {
     Component: NavHeader,
@@ -37,6 +37,7 @@ export const Default: Story = {
       {
         name: 'Character',
         path: 'characters/1',
+        onGoBack: () => {},
       },
     ],
   },

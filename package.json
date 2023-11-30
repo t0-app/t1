@@ -14,7 +14,9 @@
     "test:final": "jest",
     "ci:check": "yarn lint && yarn ts:check && yarn test:final",
     "sb:load": "sb-rn-get-stories",
-    "sb:watcher": "sb-rn-watcher"
+    "sb:watcher": "sb-rn-watcher",
+    "base-comp:new": "hygen base-comp new $1",
+    "base-screen:new": "hygen base-screen new $1"
   },
   "dependencies": {
     "@babel/plugin-transform-class-properties": "^7.22.5",

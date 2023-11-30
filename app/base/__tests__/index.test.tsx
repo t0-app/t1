@@ -4,7 +4,7 @@ import { router } from 'expo-router';
 import { HttpResponse, http } from 'msw';
 import { CHARACTER_1 } from 'data/mock';
 import { CharacterData } from 'data/operations/characters';
-import CharacterDetail from '../[id]';
+import Base from '../';
 
 jest.mock('expo-router', () => ({
   useLocalSearchParams: jest.fn().mockReturnValue({ id: 1 }),
@@ -18,13 +18,13 @@ http.get(`/character/1`, () => {
   return HttpResponse.json<CharacterData>(CHARACTER_1);
 });
 
-describe('CharacterDetail', () => {
+describe('Base', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
   test('should show character name and handle nav back', async () => {
-    render(<CharacterDetail />, {
+    render(<Base />, {
       wrapper: AppProviders,
     });
 

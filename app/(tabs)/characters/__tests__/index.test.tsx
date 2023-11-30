@@ -7,10 +7,9 @@ import { CharactersData } from 'data/operations/characters';
 import Characters from '../';
 
 jest.mock('expo-router', () => {
-  const { View } = require('react-native');
   return {
-    Link: View,
     router: {
+      back: jest.fn(),
       push: jest.fn(),
     },
   };
@@ -42,8 +41,6 @@ describe('Characters', () => {
     expect(name).toBeTruthy();
 
     const card1 = await screen.findByTestId(`card-${CHARACTER_1.id}`);
-    expect(card1).toBeTruthy();
-
     fireEvent.press(card1);
     expect(router.push).toHaveBeenCalledWith(`/characters/${CHARACTER_1.id}`);
   });

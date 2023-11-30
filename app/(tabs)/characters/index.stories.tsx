@@ -5,11 +5,8 @@ import { ThemeWrapper } from 'config/theme';
 import { CharactersUI, CharactersUIProps } from './';
 
 const meta: Meta<CharactersUIProps> = {
-  title: 'Characters',
+  title: 'screens/Characters',
   component: CharactersUI,
-  argTypes: {
-    onFetchMore: { action: 'onFetchMore' },
-  },
   args: {
     onSelectedCharacter: () => {},
     onRefresh: () => {},

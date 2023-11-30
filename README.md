@@ -24,7 +24,7 @@ Packages:
 - [x] styled-components
 - [x] jest
 - [x] storybook
-- [ ] hygen
+- [x] hygen
 - [x] react-query
 - [x] i18n
 

@@ -1,15 +1,24 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const Container = styled.ScrollView`
+interface IContainer {
+  flexWrap?: boolean;
+}
+
+const Container = styled.ScrollView<IContainer>`
   flex: 1;
+  ${({ flexWrap }) => !!flexWrap && 'flex-wrap: wrap;'}
 `;
 
-export type StoryListProps<T> = { items: T[]; Component: React.ComponentType<T> };
+export type StoryListProps<T> = {
+  items: T[];
+  flexWrap?: boolean;
+  Component: React.ComponentType<T>;
+};
 
-export function StoryList<T>({ items, Component }: StoryListProps<T>) {
+export function StoryList<T>({ items, flexWrap, Component }: StoryListProps<T>) {
   return (
-    <Container>
+    <Container flexWrap={flexWrap}>
       {items.map((item, i) => (
         <Component key={`${i}`} {...item} />
       ))}

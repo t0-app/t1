@@ -6,7 +6,7 @@ import { Slot, SplashScreen, useGlobalSearchParams, usePathname } from 'expo-rou
 import { Container } from 'components/style';
 import './../global.js';
 
-const STORYBOOK_ENABLED = __DEV__ && true;
+const STORYBOOK_ENABLED = __DEV__ && false;
 
 SplashScreen.preventAutoHideAsync();
 
