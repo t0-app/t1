@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { ThemeWrapper } from 'config/theme';
-import { LaunchUI, LaunchUIProps } from './';
+import LaunchUI, { LaunchUIProps } from './';
 
 const meta: Meta<LaunchUIProps> = {
-  title: 'screens/Launch',
+  title: 'screens/launch',
   component: LaunchUI,
   args: {
-    onGoBack: () => {},
+    onSignIn: () => {},
   },
   decorators: [
     (Story) => (

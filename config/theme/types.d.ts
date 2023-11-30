@@ -1,6 +1,7 @@
 import 'styled-components';
 
 interface ColorSchema {
+  c0: string;
   c25: string;
   c50: string;
   c100: string;

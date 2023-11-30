@@ -5,9 +5,15 @@ interface IContainer {
   flexWrap?: boolean;
 }
 
-const Container = styled.ScrollView<IContainer>`
+const Container = styled.View<IContainer>`
   flex: 1;
-  ${({ flexWrap }) => !!flexWrap && 'flex-wrap: wrap;'}
+  ${({ flexWrap }) =>
+    !!flexWrap &&
+    `
+    flex-wrap: wrap; 
+    flex-direction: row; 
+    gap: 8px;
+    `}
 `;
 
 export type StoryListProps<T> = {

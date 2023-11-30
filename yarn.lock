@@ -3946,6 +3946,11 @@
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.5.tgz#cb6e2a691b70cb177c6e3ae9c1d2e8b2ea8cd304"
   integrity sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==
 
+"@types/url-parse@^1.4.11":
+  version "1.4.11"
+  resolved "https://registry.yarnpkg.com/@types/url-parse/-/url-parse-1.4.11.tgz#01f8faa7b8bfd438e5f5efb8337a74513a15602b"
+  integrity sha512-FKvKIqRaykZtd4n47LbK/W/5fhQQ1X7cxxzG9A48h0BGN+S04NH7ervcCjM8tyR0lyGru83FAHSmw2ObgKoESg==
+
 "@types/webpack-env@^1.16.0":
   version "1.18.4"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.18.4.tgz#62879b0a9c653f9b1172d403b882f2045ecce032"
@@ -7565,6 +7570,11 @@ expo-router@^2.0.0:
     react-helmet-async "^1.3.0"
     schema-utils "^4.0.1"
     url "^0.11.0"
+
+expo-secure-store@~12.3.1:
+  version "12.3.1"
+  resolved "https://registry.yarnpkg.com/expo-secure-store/-/expo-secure-store-12.3.1.tgz#7e5ba94f6e7374f132108c9feb5cc811568f3db6"
+  integrity sha512-XLIgWDiIuiR0c+AA4NCWWibAMHCZUyRcy+lQBU49U6rvG+xmd3YrBJfQjfqAPyLroEqnLPGTWUX57GyRsfDOQw==
 
 expo-splash-screen@~0.20.2:
   version "0.20.5"

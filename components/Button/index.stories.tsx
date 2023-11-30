@@ -2,13 +2,14 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'components/helper';
 import { ThemeWrapper } from 'config/theme';
-import { NavHeader, NavHeaderProps } from './';
+import { Button, ButtonProps } from './';
 
-const meta: Meta<StoryListProps<NavHeaderProps>> = {
-  title: 'components/NavHeader',
+const meta: Meta<StoryListProps<ButtonProps>> = {
+  title: 'components/Button',
   component: StoryList,
   args: {
-    Component: NavHeader,
+    Component: Button,
+    flexWrap: true,
   },
   decorators: [
     (Story) => (
@@ -21,23 +22,24 @@ const meta: Meta<StoryListProps<NavHeaderProps>> = {
 
 export default meta;
 
-type Story = StoryObj<StoryListProps<NavHeaderProps>>;
+type Story = StoryObj<StoryListProps<ButtonProps>>;
 
 export const Default: Story = {
   args: {
     items: [
       {
-        name: 'Home',
-        path: '',
+        text: 'Login',
       },
       {
-        name: 'Characters',
-        path: 'characters',
+        text: 'Signup',
       },
       {
-        name: 'Character',
-        path: 'characters/1',
-        onGoBack: () => {},
+        text: 'Login',
+        type: 'outline',
+      },
+      {
+        text: 'Signup',
+        type: 'outline',
       },
     ],
   },

@@ -1,9 +1,8 @@
 ---
 to: app/<%= h.changeCase.paramCase(name) %>/__tests__/index.test.tsx
 ---
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import { AppProviders } from 'context/index';
-import { router } from 'expo-router';
 import { HttpResponse, http } from 'msw';
 import { CHARACTER_1 } from 'data/mock';
 import { CharacterData } from 'data/operations/characters';
@@ -26,16 +25,12 @@ describe('<%= name %>', () => {
     jest.clearAllMocks();
   });
 
-  test('should show character name and handle nav back', async () => {
+  test('should show character name', async () => {
     render(<<%= name %> />, {
       wrapper: AppProviders,
     });
 
     const name = await screen.findByText(CHARACTER_1.name);
     expect(name).toBeTruthy();
-
-    const buttonBack = await screen.findByTestId('nav-button-back');
-    fireEvent.press(buttonBack);
-    expect(router.back).toHaveBeenCalled();
   });
 });

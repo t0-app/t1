@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components/native';
 export const light: DefaultTheme = {
   color: {
     gray: {
+      c0: '#FFF',
       c25: '#FCFCFD',
       c50: '#F9FAFB',
       c100: '#F2F4F7',
@@ -19,6 +20,7 @@ export const light: DefaultTheme = {
       c900: '#101828',
     },
     primary: {
+      c0: '#FFF',
       c25: '#FCFAFF',
       c50: '#F9F5FF',
       c100: '#F4EBFF',
@@ -44,6 +46,7 @@ export const light: DefaultTheme = {
 export const dark: DefaultTheme = {
   color: {
     gray: {
+      c0: '#000',
       c25: '#101828',
       c50: '#1D2939',
       c100: '#344054',
@@ -57,6 +60,7 @@ export const dark: DefaultTheme = {
       c900: '#FCFCFD',
     },
     primary: {
+      c0: '#42307D',
       c25: '#42307D',
       c50: '#53389E',
       c100: '#6941C6',

@@ -1,20 +1,15 @@
-import { NavHeader } from 'components/NavHeader';
-import { SCContent, SContainer, Text } from 'components/style';
-import t from 'config/i18n';
-
-export interface LaunchUIProps {}
-
-export function LaunchUI() {
-  return (
-    <SContainer>
-      <NavHeader path="launch" />
-      <SCContent>
-        <Text>{t('launch')}</Text>
-      </SCContent>
-    </SContainer>
-  );
-}
+import { useSession } from 'context/auth';
+import { router } from 'expo-router';
+import LaunchUI from 'screens/launch';
 
 export default function Launch() {
-  return <LaunchUI />;
+  const { signIn } = useSession();
+  return (
+    <LaunchUI
+      onSignIn={() => {
+        signIn();
+        router.replace('/characters/');
+      }}
+    />
+  );
 }

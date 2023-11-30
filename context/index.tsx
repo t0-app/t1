@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeWrapper } from 'config/theme';
+import { SessionProvider } from './auth';
 
 const queryClient = new QueryClient();
 
@@ -9,9 +10,11 @@ interface AppProvidersProps {
 }
 const AppProviders = ({ children }: AppProvidersProps) => {
   return (
-    <ThemeWrapper>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </ThemeWrapper>
+    <SessionProvider>
+      <ThemeWrapper>
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      </ThemeWrapper>
+    </SessionProvider>
   );
 };
 

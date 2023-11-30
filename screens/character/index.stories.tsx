@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { CHARACTER_1 } from 'data/mock';
 import { ThemeWrapper } from 'config/theme';
-import { CharacterUI, CharacterUIProps } from './[id]';
+import CharacterUI, { CharacterUIProps } from './';
 
 const meta: Meta<CharacterUIProps> = {
   title: 'screens/Character',

@@ -2,14 +2,11 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { CHARACTER_1 } from 'data/mock';
 import { ThemeWrapper } from 'config/theme';
-import { BaseUI, BaseUIProps } from './';
+import BaseUI, { BaseUIProps } from './';
 
 const meta: Meta<BaseUIProps> = {
-  title: 'screens/Base',
+  title: 'screens/base',
   component: BaseUI,
-  args: {
-    onGoBack: () => {},
-  },
   decorators: [
     (Story) => (
       <ThemeWrapper>

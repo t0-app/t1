@@ -18,10 +18,10 @@ global.STORIES = [
   },
   {
     titlePrefix: "",
-    directory: "./app",
+    directory: "./screens",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher:
-      "^\\.[\\\\/](?:app(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(?:ts|tsx|js|jsx)?)$",
+      "^\\.[\\\\/](?:screens(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.(?:ts|tsx|js|jsx)?)$",
   },
 ];
 
@@ -46,13 +46,13 @@ if (parameters) {
 const getStories = () => {
   return {
     "./components/Base/index.stories.tsx": require("../components/Base/index.stories.tsx"),
+    "./components/Button/index.stories.tsx": require("../components/Button/index.stories.tsx"),
     "./components/ButtonIcon/index.stories.tsx": require("../components/ButtonIcon/index.stories.tsx"),
     "./components/Card/index.stories.tsx": require("../components/Card/index.stories.tsx"),
-    "./components/NavHeader/index.stories.tsx": require("../components/NavHeader/index.stories.tsx"),
-    "./app/(tabs)/characters/[id].stories.tsx": require("../app/(tabs)/characters/[id].stories.tsx"),
-    "./app/(tabs)/characters/index.stories.tsx": require("../app/(tabs)/characters/index.stories.tsx"),
-    "./app/base/index.stories.tsx": require("../app/base/index.stories.tsx"),
-    "./app/launch/index.stories.tsx": require("../app/launch/index.stories.tsx"),
+    "./screens/base/index.stories.tsx": require("../screens/base/index.stories.tsx"),
+    "./screens/character/index.stories.tsx": require("../screens/character/index.stories.tsx"),
+    "./screens/characters/index.stories.tsx": require("../screens/characters/index.stories.tsx"),
+    "./screens/launch/index.stories.tsx": require("../screens/launch/index.stories.tsx"),
   };
 };
 
