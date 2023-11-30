@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "t1",
-    "slug": "t1",
-    "scheme": "t1",
+    "name": "cosmic-gem-app",
+    "slug": "cosmic-gem-app",
+    "scheme": "cosmic-gem-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
