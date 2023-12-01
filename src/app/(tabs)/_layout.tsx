@@ -1,5 +1,6 @@
 import { Redirect, Tabs } from 'expo-router';
 import { useTheme } from 'styled-components/native';
+import Icon from 'src/components/Icon';
 import { Loading, SCContent, SContainer } from 'src/components/style';
 import { useSession } from 'src/context/auth';
 
@@ -30,7 +31,23 @@ export default function TabsLayout() {
         tabBarStyle: {
           backgroundColor: theme.color.gray.c25,
         },
-      }}
-    />
+      }}>
+      <Tabs.Screen
+        name="characters"
+        options={{
+          href: '/characters',
+          tabBarIcon: ({ color }) => <Icon name="group" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          href: {
+            pathname: '/profile',
+          },
+          tabBarIcon: ({ color }) => <Icon name="person" color={color} />,
+        }}
+      />
+    </Tabs>
   );
 }

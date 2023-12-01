@@ -1,4 +1,4 @@
-import { Card } from 'src/components/Card';
+import Card from 'src/components/Card';
 import { Loading, SContainer } from 'src/components/style';
 import { Character } from 'src/data/model';
 

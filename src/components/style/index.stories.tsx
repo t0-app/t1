@@ -6,11 +6,11 @@ import { TType, Text, getFontSize } from './';
 const textTypes: TType[] = ['h1', 'h2', 'title', 'body', 'light'];
 
 interface StyleViewProps {}
-function StyleView({}: StyleViewProps) {
+function StyleView() {
   return (
     <>
       {textTypes.map((ttype) => (
-        <Text ttype={ttype}>{`Text-${ttype}-${getFontSize(ttype)}`}</Text>
+        <Text key={ttype} ttype={ttype}>{`Text-${ttype}-${getFontSize(ttype)}`}</Text>
       ))}
     </>
   );

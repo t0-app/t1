@@ -27,7 +27,7 @@ export interface CardProps {
   onPress?: () => void;
 }
 
-export function Card({ testID, character, onPress }: CardProps) {
+export default function Card({ testID, character, onPress }: CardProps) {
   return (
     <Container testID={testID} onPress={onPress} disabled={!onPress}>
       <Content>

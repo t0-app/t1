@@ -2,14 +2,13 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import ButtonIcon, { ButtonIconProps, IconName } from './';
+import Icon, { IconName, IconProps } from './';
 
-const meta: Meta<StoryListProps<ButtonIconProps>> = {
-  title: 'components/ButtonIcon',
+const meta: Meta<StoryListProps<IconProps>> = {
+  title: 'components/Icon',
   component: StoryList,
   args: {
-    Component: ButtonIcon,
-    flexWrap: true,
+    Component: Icon,
   },
   decorators: [
     (Story) => (
@@ -22,9 +21,9 @@ const meta: Meta<StoryListProps<ButtonIconProps>> = {
 
 export default meta;
 
-type Story = StoryObj<StoryListProps<ButtonIconProps>>;
+type Story = StoryObj<StoryListProps<IconProps>>;
 
-const iconNames: IconName[] = ['chevron-left', 'chevron-right', 'verified-user'];
+const iconNames: IconName[] = ['chevron-left', 'chevron-right', 'verified-user', 'group', 'person'];
 
 export const Default: Story = {
   args: {

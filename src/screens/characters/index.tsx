@@ -1,5 +1,5 @@
 import { FlatList } from 'react-native';
-import { Card } from 'src/components/Card';
+import Card from 'src/components/Card';
 import { Loading, RefreshControl, SContainer } from 'src/components/style';
 import { Character } from 'src/data/model';
 

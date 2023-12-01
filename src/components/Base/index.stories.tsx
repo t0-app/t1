@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import { Base, BaseProps } from './';
+import Base, { BaseProps } from './';
 
 const meta: Meta<StoryListProps<BaseProps>> = {
   title: 'components/Base',
