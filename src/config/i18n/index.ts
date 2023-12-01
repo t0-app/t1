@@ -9,6 +9,7 @@ const i18n = new I18n({
     characters: 'Characters',
     login: 'Login',
     logout: 'Logout',
+    profile: 'Profile',
   },
 });
 
@@ -16,4 +17,4 @@ i18n.enableFallback = true;
 i18n.defaultLocale = 'en';
 i18n.locale = Localization.locale;
 
-export default (scope: Scope, options?: TranslateOptions) => i18n.t(scope, options);
+export const t = (scope: Scope, options?: TranslateOptions) => i18n.t(scope, options);

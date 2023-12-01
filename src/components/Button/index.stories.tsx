@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import { Button, ButtonProps } from './';
+import Button, { ButtonProps } from './';
 
 const meta: Meta<StoryListProps<ButtonProps>> = {
   title: 'components/Button',

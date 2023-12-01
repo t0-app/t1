@@ -7,7 +7,7 @@ interface IContainer {
 
 const Container = styled.View<IContainer>`
   ${({ flexWrap }) =>
-    !!flexWrap
+    flexWrap
       ? `
     flex-wrap: wrap; 
     flex-direction: row; 

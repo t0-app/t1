@@ -3,7 +3,7 @@ to: src/components/<%= name %>/index.tsx
 ---
 import styled from 'styled-components/native';
 import { Text } from 'src/components/style';
-import t from 'src/config/i18n';
+import { t } from 'src/config/i18n';
 
 const Container = styled.Pressable`
   border-width: 1px;
@@ -17,7 +17,7 @@ export interface <%= name %>Props {
   onPress?: () => void;
 }
 
-export function <%= name %>({ text, onPress }: <%= name %>Props) {
+export default function <%= name %>({ text, onPress }: <%= name %>Props) {
   return (
     <Container onPress={onPress}>
       <Text ttype="h2">{t('<%= name %>')}</Text>

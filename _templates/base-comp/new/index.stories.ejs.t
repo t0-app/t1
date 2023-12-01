@@ -5,7 +5,7 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import { <%= name %>, <%= name %>Props } from './';
+import <%= name %>, { <%= name %>Props } from './';
 
 const meta: Meta<StoryListProps<<%= name %>Props>> = {
   title: 'components/<%= name %>',

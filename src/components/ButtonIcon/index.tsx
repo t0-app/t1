@@ -1,7 +1,7 @@
-import { MaterialIcons } from '@expo/vector-icons';
-import styled, { useTheme } from 'styled-components/native';
+import styled from 'styled-components/native';
+import Icon, { IconName } from 'src/components/Icon';
 
-export type IconName = keyof typeof MaterialIcons.glyphMap;
+export { IconName } from 'src/components/Icon';
 
 const Container = styled.Pressable``;
 
@@ -13,12 +13,10 @@ export interface ButtonIconProps {
   onPress?: () => void;
 }
 
-export function ButtonIcon({ testID, name, size = 24, color, onPress }: ButtonIconProps) {
-  const theme = useTheme();
-  const defaultColor = theme.color.gray.c900;
+export default function ButtonIcon({ testID, name, size = 24, color, onPress }: ButtonIconProps) {
   return (
     <Container testID={testID} onPress={onPress} disabled={!onPress}>
-      <MaterialIcons name={name} size={size} color={color ?? defaultColor} />
+      <Icon name={name} size={size} color={color} />
     </Container>
   );
 }

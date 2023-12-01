@@ -23,7 +23,7 @@ export interface ButtonProps {
   onPress?: () => void;
 }
 
-export function Button({ text, type = 'default', onPress }: ButtonProps) {
+export default function Button({ text, type = 'default', onPress }: ButtonProps) {
   return (
     <Container onPress={onPress} type={type}>
       <Text ttype="title" light={type === 'default'} underline={type === 'text'}>

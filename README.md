@@ -30,6 +30,6 @@ Packages:
 - [x] react-query
 - [x] i18n
 
-:bulb: `main` branch keeps the chore structure for cosmic-gem-app, on other branchs we add custom integrations like `with-auth`, `with-firebase`, `with-tailwind`, etc
+:bulb: `main` branch keeps the chore structure for @rocali/t1-app, on other branchs we add custom integrations like `with-auth`, `with-firebase`, `with-tailwind`, etc
 
 :thinking: We could then rebase branchs from main and update the chore structure
