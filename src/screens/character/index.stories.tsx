@@ -5,7 +5,7 @@ import { CHARACTER_1 } from 'src/data/mock';
 import CharacterUI, { CharacterUIProps } from './';
 
 const meta: Meta<CharacterUIProps> = {
-  title: 'screens/Character',
+  title: 'screens/character',
   component: CharacterUI,
   args: {
     onGoBack: () => {},

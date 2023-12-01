@@ -16,12 +16,13 @@ export const SCContent = styled.View`
   justify-content: center;
 `;
 
-type TType = 'h1' | 'h2' | 'title' | 'body' | 'light';
+export type TType = 'h1' | 'h2' | 'title' | 'body' | 'light';
 
-interface IText {
+export interface TextProps {
   ttype?: TType;
   center?: boolean;
   light?: boolean;
+  underline?: boolean;
 }
 
 const getFontFamily = (ttype: TType, theme: DefaultTheme): string => {
@@ -35,23 +36,23 @@ const getFontFamily = (ttype: TType, theme: DefaultTheme): string => {
   return fontFamilyMap[ttype];
 };
 
-const getFontSize = (ttype: TType): string => {
+export const getFontSize = (ttype: TType): string => {
   const fontFamilyMap: { [key in TType]: string } = {
     h1: '24px',
     h2: '20px',
     title: '18px',
     body: '14px',
-    light: '11px',
+    light: '12px',
   };
   return fontFamilyMap[ttype];
 };
 
-export const Text = styled.Text<IText>`
-  ${({ ttype = 'body' }) => ['h1', 'h2']?.includes(ttype) && 'flex: 1;'}
+export const Text = styled.Text<TextProps>`
   font-family: ${({ ttype = 'body', theme }) => getFontFamily(ttype, theme)};
   color: ${({ light, theme }) => (light ? theme.color.gray.c50 : theme.color.gray.c900)};
   font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
   ${({ center }) => center && 'text-align: center;'}
+  ${({ underline }) => underline && 'text-decoration: underline;'}
 `;
 
 export const Loading = styled.ActivityIndicator`

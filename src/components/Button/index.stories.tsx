@@ -32,14 +32,11 @@ export const Default: Story = {
       },
       {
         text: 'Signup',
-      },
-      {
-        text: 'Login',
         type: 'outline',
       },
       {
-        text: 'Signup',
-        type: 'outline',
+        text: 'Logout',
+        type: 'text',
       },
     ],
   },

@@ -6,14 +6,16 @@ interface IContainer {
 }
 
 const Container = styled.View<IContainer>`
-  flex: 1;
   ${({ flexWrap }) =>
-    !!flexWrap &&
-    `
+    !!flexWrap
+      ? `
     flex-wrap: wrap; 
     flex-direction: row; 
     gap: 8px;
-    `}
+    `
+      : `
+  flex: 1;
+  `}
 `;
 
 export type StoryListProps<T> = {

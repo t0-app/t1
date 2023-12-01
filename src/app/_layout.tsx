@@ -10,8 +10,6 @@ export const Container = styled.View`
   flex: 1;
 `;
 
-const STORYBOOK_ENABLED = __DEV__ && false;
-
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -36,16 +34,6 @@ export default function RootLayout() {
 
   if (!fontsLoaded) {
     return null;
-  }
-
-  if (STORYBOOK_ENABLED) {
-    const StorybookComponent = require('./../../.storybook').default;
-
-    return (
-      <Container onLayout={onLayoutRootView}>
-        <StorybookComponent />
-      </Container>
-    );
   }
 
   return (

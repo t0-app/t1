@@ -5,7 +5,7 @@ import { CHARACTER_1, CHARACTER_2 } from 'src/data/mock';
 import CharactersUI, { CharactersUIProps } from './';
 
 const meta: Meta<CharactersUIProps> = {
-  title: 'screens/Characters',
+  title: 'screens/characters',
   component: CharactersUI,
   args: {
     onSelectedCharacter: () => {},

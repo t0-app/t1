@@ -17,7 +17,7 @@ export interface BaseProps {
 export function Base({ text, onPress }: BaseProps) {
   return (
     <Container onPress={onPress}>
-      <Text ttype="h2">{t('Base')}</Text>
+      <Text ttype="h2">{t('base')}</Text>
       <Text>{text}</Text>
     </Container>
   );
