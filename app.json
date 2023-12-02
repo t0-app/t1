@@ -2,7 +2,7 @@
   "expo": {
     "name": "@rocali/t1-app",
     "slug": "rocali-t1",
-    "scheme": "@rocali/t1-app",
+    "scheme": "rocali-t1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,26 +12,23 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rocalicode.rocalit1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.rocalicode.rocalit1"
     },
     "web": {
       "bundler": "metro",
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      "expo-localization"
-    ],
+    "plugins": ["expo-router", "expo-localization"],
     "experiments": {
       "typedRoutes": true
     },
@@ -43,6 +40,12 @@
         "projectId": "f3033fdb-1c8e-4340-bd1c-60ea41667f15"
       }
     },
-    "owner": "rocalicode"
+    "owner": "rocalicode",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/f3033fdb-1c8e-4340-bd1c-60ea41667f15"
+    }
   }
 }
