@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect } from 'react';
 import { Inter_300Light, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 import { useFonts } from 'expo-font';
-import { Slot, SplashScreen, useGlobalSearchParams, usePathname } from 'expo-router';
+import { Slot, useGlobalSearchParams, usePathname } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
 import styled from 'styled-components/native';
 import { AppProviders } from 'src/context';
 import './../../global.js';

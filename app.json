@@ -33,8 +33,7 @@
         "expo-router",
         {
           "asyncRoutes": {
-            "web": true,
-            "default": "development"
+            "web": false
           }
         }
       ],
