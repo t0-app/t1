@@ -3,7 +3,6 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo', '@babel/preset-typescript'],
     plugins: [
-      'expo-router/babel',
       [
         'module-resolver',
         {
@@ -12,10 +11,6 @@ module.exports = function (api) {
           },
         },
       ],
-      '@babel/plugin-transform-flow-strip-types',
-      '@babel/plugin-proposal-class-properties',
-      '@babel/plugin-proposal-private-methods',
-      '@babel/plugin-transform-class-properties',
     ],
   };
 };

@@ -31,6 +31,7 @@ export default function Card({ testID, character, onPress }: CardProps) {
   return (
     <Container testID={testID} onPress={onPress} disabled={!onPress}>
       <Content>
+        <Text ttype="light">{`#${character.id}`}</Text>
         <Text ttype="h2">{character.name}</Text>
         <Text ttype="light">{`status: ${character.status}`}</Text>
         <Text ttype="light">{`species: ${character.species}`}</Text>
