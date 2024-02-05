@@ -1,6 +1,25 @@
-# Cosmic Gem App
+# Template 1 - t1 App
 
 From https://github.com/lucasrocali/t1
+
+# Install
+
+`git clone https://github.com/lucasrocali/t1 && yarn`
+
+# Usage
+
+`yarn web`
+`yarn ios`
+`yarn android`
+
+# Aditional
+
+Install Prettier - Code format extenstion on VS Code
+
+# Docs
+
+https://docs.expo.dev/
+https://docs.expo.dev/router/introduction/
 
 Template project (-1)
 
