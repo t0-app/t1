@@ -8,9 +8,23 @@ From https://github.com/lucasrocali/t1
 
 # Usage
 
-`yarn web`
-`yarn ios`
-`yarn android`
+| script                       | description                                                   |
+| ---------------------------- | ------------------------------------------------------------- |
+| `yarn web`                   | for running on browser                                        |
+| `yarn ios`                   | for running on iOS simulator                                  |
+| `yarn android`               | for running on Android simulator                              |
+| `yarn ts:check`              | for checking typescript                                       |
+| `yarn lint`                  | for checking lint                                             |
+| `yarn lint:fix`              | for checking and fix lint                                     |
+| `yarn test`                  | for testing                                                   |
+| `yarn test:debug`            | for testing with logs                                         |
+| `yarn test:final`            | for running on Android simulator                              |
+| `yarn ci:check`              | group of lint, ts and test (used on precommit)                |
+| `yarn sb:load`               | when a new component or screen is added it loads to storybook |
+| `base-comp:new CompName`     | for creating a new component with name `CompName`             |
+| `base-screen:new ScreenName` | for creating a new screen with name `ScreenName`              |
+
+# Creating a new branch
 
 # Aditional
 
@@ -21,7 +35,7 @@ Install Prettier - Code format extenstion on VS Code
 https://docs.expo.dev/
 https://docs.expo.dev/router/introduction/
 
-Template project (-1)
+## Template project (-1)
 
 Folder structure:
 
