@@ -26,6 +26,21 @@ From https://github.com/lucasrocali/t1
 
 # Creating a new branch
 
+`git checkout -b Feature/ROC-33`
+
+`\_sitemap`
+`\_storybook`
+
+# Creating a new component
+
+`yarn base-comp:new LocationCell`
+`yarn sb:load`
+
+# Creating a new screen
+
+`yarn base-screen:new Locations`
+`yarn sb:load`
+
 # Aditional
 
 Install Prettier - Code format extenstion on VS Code

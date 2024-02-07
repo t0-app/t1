@@ -40,6 +40,13 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="locations"
+        options={{
+          href: '/locations',
+          tabBarIcon: ({ color }) => <Icon name="group" color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           href: {
