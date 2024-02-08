@@ -7,6 +7,7 @@
     "android": "npx expo start --android",
     "ios": "npx expo start --ios",
     "web": "npx expo start --web",
+    "web:clear": "npx expo start --web --clear",
     "ts:check": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -17,7 +18,9 @@
     "sb:load": "sb-rn-get-stories",
     "sb:watcher": "sb-rn-watcher",
     "base-comp:new": "hygen base-comp new $1",
-    "base-screen:new": "hygen base-screen new $1"
+    "base-screen:new": "hygen base-screen new $1",
+    "base-comp:new-windows": "hygen base-comp new ",
+    "base-screen:new-windows": "hygen base-screen new "
   },
   "dependencies": {
     "@babel/plugin-transform-class-properties": "^7.22.5",
