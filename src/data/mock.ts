@@ -1,4 +1,4 @@
-import { Character } from './model';
+import { Character, Location } from './model';
 
 export const CHARACTER_1: Character = {
   id: 1,
@@ -46,4 +46,34 @@ export const CHARACTER_2: Character = {
   ],
   url: 'https://rickandmortyapi.com/api/character/2',
   created: '2017-11-04T18:50:21.651Z',
+};
+
+export const LOCATION_1: Location = {
+  id: 1,
+  name: 'Earth (C-137)',
+  type: 'Planet',
+  dimension: 'Dimension C-137',
+  residents: [],
+  url: 'https://rickandmortyapi.com/api/location/1',
+  created: '2017-11-10T12:42:04.162Z',
+};
+
+export const LOCATION_2: Location = {
+  id: 2,
+  name: 'Abadango',
+  type: 'Cluster',
+  dimension: 'unknown',
+  residents: [],
+  url: 'https://rickandmortyapi.com/api/location/2',
+  created: '2017-11-10T13:06:38.182Z',
+};
+
+export const LOCATION_3: Location = {
+  id: 3,
+  name: 'Citadel of Ricks',
+  type: 'Space station',
+  dimension: 'unknown',
+  residents: [],
+  url: 'https://rickandmortyapi.com/api/location/3',
+  created: '2017-11-10T13:08:13.191Z',
 };

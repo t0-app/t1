@@ -23,7 +23,14 @@ export default meta;
 
 type Story = StoryObj<StoryListProps<IconProps>>;
 
-const iconNames: IconName[] = ['chevron-left', 'chevron-right', 'verified-user', 'group', 'person'];
+const iconNames: IconName[] = [
+  'chevron-left',
+  'chevron-right',
+  'verified-user',
+  'group',
+  'person',
+  'map',
+];
 
 export const Default: Story = {
   args: {
