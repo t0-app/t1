@@ -35,7 +35,7 @@ export const Default: Story = {
 export const Loading: Story = {
   args: {
     locations: [],
-    isLoading: true,
-    isFetching: false,
+    isLoading: false,
+    isFetching: true,
   },
 };
