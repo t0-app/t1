@@ -41,7 +41,9 @@ export default function CharactersUI({
         renderItem={renderItem}
         refreshControl={<RefreshControl refreshing={isLoading} onRefresh={onRefresh} />}
         ListFooterComponent={isFetching ? <Loading /> : null}
-        ListHeaderComponent={<TextInput value={name} onChangeText={onSearchName} />}
+        ListHeaderComponent={
+          <TextInput testID="text-input-name" value={name} onChangeText={onSearchName} />
+        }
         keyExtractor={(character: Character) => `c_${character.id}`}
         onEndReachedThreshold={0.3}
         onEndReached={() => onFetchMore()}
