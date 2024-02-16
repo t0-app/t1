@@ -8,6 +8,7 @@ export interface LocationsUIProps {
   isLoading?: boolean;
   isFetching?: boolean;
   onRefresh: () => void;
+  onSelectedLocation: (locationId: number) => void;
   onFetchMore: () => void;
 }
 
@@ -16,10 +17,17 @@ export default function LocationsUI({
   isLoading = false,
   isFetching = false,
   onRefresh,
+  onSelectedLocation,
   onFetchMore,
 }: LocationsUIProps) {
   const renderItem = ({ item: location }: { item: Location }) => {
-    return <LocationCell location={location} />;
+    return (
+      <LocationCell
+        testID={`cell-${location.id}`}
+        location={location}
+        onPress={() => onSelectedLocation(location.id)}
+      />
+    );
   };
 
   return (

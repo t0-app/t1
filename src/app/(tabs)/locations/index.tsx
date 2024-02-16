@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import { useLocationsQuery } from 'src/data/hooks/locations';
 import LocationsUI from 'src/screens/locations';
 
@@ -13,6 +14,7 @@ export default function Locations() {
       locations={locations}
       isLoading={isLoading}
       isFetching={isFetching}
+      onSelectedLocation={(locationId) => router.push(`/locations/${locationId}`)}
       onRefresh={() => refetch()}
       onFetchMore={() => {
         fetchNextPage();

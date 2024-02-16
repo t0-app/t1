@@ -56,6 +56,7 @@ const getStories = () => {
     "./src/screens/character/index.stories.tsx": require("../src/screens/character/index.stories.tsx"),
     "./src/screens/characters/index.stories.tsx": require("../src/screens/characters/index.stories.tsx"),
     "./src/screens/launch/index.stories.tsx": require("../src/screens/launch/index.stories.tsx"),
+    "./src/screens/location/index.stories.tsx": require("../src/screens/location/index.stories.tsx"),
     "./src/screens/locations/index.stories.tsx": require("../src/screens/locations/index.stories.tsx"),
     "./src/screens/profile/index.stories.tsx": require("../src/screens/profile/index.stories.tsx"),
   };
