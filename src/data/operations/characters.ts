@@ -3,13 +3,16 @@ import { Character } from '../model';
 
 //getCharacters
 export interface CharactersVars {
-  page: number;
+  page?: number;
+  name?: string;
 }
 
 export type CharactersData = PaginatedResponse<Character>;
 
-export async function getCharacters({ page }: CharactersVars): Promise<CharactersData> {
-  const { data } = await axiosInstance.get<CharactersData>(`/character/?page=${page}`);
+export async function getCharacters({ page, name }: CharactersVars): Promise<CharactersData> {
+  const { data } = await axiosInstance.get<CharactersData>(
+    `/character/?page=${page}${name ? `&name=${name}` : ''}`,
+  );
   return data;
 }
 

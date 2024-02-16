@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { router } from 'expo-router';
 import { useCharactersQuery } from 'src/data/hooks/characters';
 import CharactersUI from 'src/screens/characters';
 
 export default function Characters() {
-  const { data, isLoading, isFetching, fetchNextPage, refetch } = useCharactersQuery({});
+  const [name, setName] = useState('');
+
+  const { data, isLoading, isFetching, fetchNextPage, refetch } = useCharactersQuery({
+    vars: { name },
+  });
 
   const characters =
     data?.pages.map((page) => page.results ?? []).reduce((arr, subarr) => arr.concat(subarr), []) ??
@@ -11,6 +16,7 @@ export default function Characters() {
 
   return (
     <CharactersUI
+      name={name}
       characters={characters}
       isLoading={isLoading}
       isFetching={isFetching}
@@ -19,6 +25,7 @@ export default function Characters() {
       onFetchMore={() => {
         fetchNextPage();
       }}
+      onSearchName={setName}
     />
   );
 }
