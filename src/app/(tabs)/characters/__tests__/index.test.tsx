@@ -98,4 +98,49 @@ describe('Characters', () => {
     const name3 = await screen.findByText(CHARACTER_3.name);
     expect(name3).toBeTruthy();
   });
+
+  test('should filter character by specie', async () => {
+    render(<Characters />, {
+      wrapper: AppProviders,
+    });
+    const species1 = await screen.findAllByText(`species: ${CHARACTER_1.species}`);
+    expect(species1).toBeTruthy();
+
+    const textInputSpecies = await screen.findByTestId('text-input-species');
+    fireEvent.changeText(textInputSpecies, 'Human');
+
+    const species3 = await screen.findAllByText(`species: ${CHARACTER_1.species}`);
+    expect(species3).toBeTruthy();
+  });
+
+  test('should filter character by type', async () => {
+    render(<Characters />, {
+      wrapper: AppProviders,
+    });
+    const textInputType = await screen.findByTestId('text-input-type');
+    fireEvent.changeText(textInputType, 'Parasite');
+
+    const type2 = await screen.findAllByText(`type: ${CHARACTER_2.type}`);
+    expect(type2).toBeTruthy();
+  });
+
+  test('should filter character by status', async () => {
+    render(<Characters />, {
+      wrapper: AppProviders,
+    });
+    const textInputStatus = await screen.findByTestId('text-input-status');
+    fireEvent.changeText(textInputStatus, 'Dead');
+
+    const status1 = await screen.findAllByText(`status: ${CHARACTER_1.status}`);
+    expect(status1).toBeTruthy();
+  });
+
+  test('should filter character by gender', async () => {
+    render(<Characters />, {
+      wrapper: AppProviders,
+    });
+
+    const textInputGender = await screen.findByTestId('text-input-gender');
+    fireEvent.changeText(textInputGender, 'Female');
+  });
 });
