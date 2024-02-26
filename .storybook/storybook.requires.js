@@ -50,6 +50,7 @@ const getStories = () => {
     './src/components/EpisodeCell/index.stories.tsx': require('../src/components/EpisodeCell/index.stories.tsx'),
     './src/components/Icon/index.stories.tsx': require('../src/components/Icon/index.stories.tsx'),
     './src/components/LocationCell/index.stories.tsx': require('../src/components/LocationCell/index.stories.tsx'),
+    './src/components/Picker/index.stories.tsx': require('../src/components/Picker/index.stories.tsx'),
     './src/components/style/index.stories.tsx': require('../src/components/style/index.stories.tsx'),
     './src/screens/base/index.stories.tsx': require('../src/screens/base/index.stories.tsx'),
     './src/screens/character/index.stories.tsx': require('../src/screens/character/index.stories.tsx'),

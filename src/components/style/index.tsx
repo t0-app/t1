@@ -20,6 +20,7 @@ export const SCContent = styled.View`
 export const SHeader = styled.View`
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
   border: 1px ${({ theme }) => theme.color.gray.c900} solid;
   gap: 10px;
@@ -44,7 +45,7 @@ export interface TextInputProps {
   center?: boolean;
   light?: boolean;
   border?: boolean;
-  widthLimit?: boolean;
+  sizeLimit?: boolean;
 }
 
 const getFontFamily = (ttype: TType, theme: DefaultTheme): string => {
@@ -98,7 +99,8 @@ export const TextInput = styled.TextInput<TextInputProps>`
   color: ${({ light, theme }) => (light ? theme.color.gray.c900 : theme.color.gray.c0)};
   padding: ${({ ttype = 'body' }) => getPaddingSize(ttype)};
   margin: 10px;
-  ${({ widthLimit }) => widthLimit && 'width: 100px;'}
+  ${({ sizeLimit }) => sizeLimit && 'width: 100px;'}
+  ${({ sizeLimit }) => sizeLimit && 'height: 40px;'}
   ${({ center }) => center && 'text-align: center;'}
   ${({ border, theme }) => border && `border: 2px ${theme.color.gray.c400} solid;`}
   border-radius: ${({ ttype = 'body' }) => getPaddingSize(ttype)};

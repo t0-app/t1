@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
 import Card from 'src/components/Card';
+import Picker from 'src/components/Picker';
 import { Loading, RefreshControl, SContainer, SHeader, TextInput } from 'src/components/style';
 import { Character } from 'src/data/model';
 
@@ -61,7 +62,7 @@ export default function CharactersUI({
           placeholder="name"
           value={name}
           border={true}
-          widthLimit={true}
+          sizeLimit={true}
           onChangeText={onSearchName}
         />
         <TextInput
@@ -69,7 +70,7 @@ export default function CharactersUI({
           placeholder="type"
           value={type}
           border={true}
-          widthLimit={true}
+          sizeLimit={true}
           onChangeText={onSearchType}
         />
         <TextInput
@@ -77,7 +78,7 @@ export default function CharactersUI({
           placeholder="species"
           value={species}
           border={true}
-          widthLimit={true}
+          sizeLimit={true}
           onChangeText={onSearchSpecie}
         />
         <TextInput
@@ -85,7 +86,7 @@ export default function CharactersUI({
           placeholder="gender"
           value={gender}
           border={true}
-          widthLimit={true}
+          sizeLimit={true}
           onChangeText={onSearchGender}
         />
         <TextInput
@@ -93,7 +94,7 @@ export default function CharactersUI({
           placeholder="status"
           value={status}
           border={true}
-          widthLimit={true}
+          sizeLimit={true}
           onChangeText={onSearchStatus}
         />
       </SHeader>
