@@ -6,7 +6,7 @@ import CharactersUI from 'src/screens/characters';
 export default function Characters() {
   const [name, setName] = useState('');
 
-  const { data, isLoading, isFetching, fetchNextPage, refetch } = useCharactersQuery({
+  const { data, isLoading, isFetching, hasNextPage, fetchNextPage, refetch } = useCharactersQuery({
     vars: { name },
   });
 
@@ -23,7 +23,7 @@ export default function Characters() {
       onSelectedCharacter={(characterId) => router.push(`/characters/${characterId}`)}
       onRefresh={() => refetch()}
       onFetchMore={() => {
-        fetchNextPage();
+        hasNextPage && fetchNextPage();
       }}
       onSearchName={setName}
     />
