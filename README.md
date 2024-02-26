@@ -6,6 +6,8 @@ From https://github.com/t0-app/t1
 
 `git clone https://github.com/t0-app/t1 && yarn`
 
+Doc - https://rickandmortyapi.com/documentation/#rest
+
 # Usage
 
 | script                       | description                                                   |
@@ -25,6 +27,8 @@ From https://github.com/t0-app/t1
 | `base-screen:new ScreenName` | for creating a new screen with name `ScreenName`              |
 
 # Creating a new branch
+
+`git checkout -b Feature/ROC-36`
 
 # Aditional
 

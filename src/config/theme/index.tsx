@@ -8,7 +8,7 @@ export const light: DefaultTheme = {
     primary: '#02afc5',
     accent: '#70592d',
     high: '#000',
-    medium: '#475467',
+    medium: '#344054',
     low: '#98A2B3',
     border: '#F9FAFB',
     bg: '#FFF',
@@ -27,9 +27,9 @@ export const dark: DefaultTheme = {
     primary: '#02afc5',
     accent: '#70592d',
     high: '#FFF',
-    medium: '#475467',
+    medium: '#E4E7EC',
     low: '#98A2B3',
-    border: '#475467',
+    border: '#344054',
     bg: '#000',
   },
   fontFamily: {
@@ -48,6 +48,14 @@ export const ThemeWrapper = ({ children }: WrapperProps): JSX.Element => {
   const colorScheme = useColorScheme();
   const theme = colorScheme === 'dark' ? dark : light;
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+};
+
+export const ThemeLightWrapper = ({ children }: WrapperProps): JSX.Element => {
+  return <ThemeProvider theme={light}>{children}</ThemeProvider>;
+};
+
+export const ThemeDarkWrapper = ({ children }: WrapperProps): JSX.Element => {
+  return <ThemeProvider theme={dark}>{children}</ThemeProvider>;
 };
 
 export const ThemeStoryWrapper = ({ children }: WrapperProps): JSX.Element => {

@@ -1,30 +1,40 @@
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import styled from 'styled-components/native';
-import { ThemeStoryWrapper, ThemeWrapper, light } from 'src/config/theme';
-import { ColorMap } from 'src/config/theme/types';
-import { TType, Text, getFontSize } from './';
+import { ThemeDarkWrapper, ThemeStoryWrapper, ThemeWrapper, dark, light } from 'src/config/theme';
+import { ColorKey, TType, Text, getFontSize } from './';
 
 const textTypes: TType[] = ['h1', 'h2', 'title', 'body', 'light'];
 
 const TextContainer = styled.View`
   background-color: ${({ theme }) => theme.color.bg};
+  padding: 12px;
 `;
 
-const ColorRow = styled.View`
+const TextRow = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
 `;
 
-const ColorBox = styled.View<{ color: string }>`
+const ColorRow = styled.View`
+  background-color: ${({ theme }) => theme.color.bg};
+  padding: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+`;
+
+const ColorBox = styled.View``;
+
+const ColorBG = styled.View<{ color: string }>`
   width: 100px;
   height: 100px;
   background-color: ${({ color }) => color};
   padding: 4px;
   justify-content: flex-end;
+  border: ${({ theme }) => theme.color.high} 1px;
 `;
 
-type ColorKey = keyof ColorMap;
+const textColors: ColorKey[] = ['high', 'medium', 'low', 'primary', 'accent'];
 
 interface StyleViewProps {}
 function StyleView() {
@@ -32,17 +42,34 @@ function StyleView() {
     <>
       <ColorRow>
         {(Object.keys(light.color) as ColorKey[]).map((colorKey) => (
-          <ColorBox color={light.color[colorKey]}>
-            <Text
-              light={colorKey === 'high'}
-              ttype={'light'}>{`${colorKey}: ${light.color[colorKey]}`}</Text>
+          <ColorBox key={colorKey}>
+            <ColorBG color={light.color[colorKey]} />
+            <Text center>{`${colorKey}\n${light.color[colorKey]}`}</Text>
           </ColorBox>
         ))}
       </ColorRow>
+      <ThemeDarkWrapper>
+        <ColorRow>
+          {(Object.keys(dark.color) as ColorKey[]).map((colorKey) => (
+            <ColorBox key={colorKey}>
+              <ColorBG color={dark.color[colorKey]} />
+              <Text center>{`${colorKey}\n${dark.color[colorKey]}`}</Text>
+            </ColorBox>
+          ))}
+        </ColorRow>
+      </ThemeDarkWrapper>
       <ThemeStoryWrapper>
         <TextContainer>
           {textTypes.map((ttype) => (
-            <Text key={ttype} ttype={ttype}>{`Text-${ttype}-${getFontSize(ttype)}`}</Text>
+            <TextRow key={ttype}>
+              {textColors.map((textColor) => (
+                <Text
+                  flex
+                  key={`${ttype}-${textColor}`}
+                  ttype={ttype}
+                  color={textColor}>{`Text-${ttype}-${getFontSize(ttype)} `}</Text>
+              ))}
+            </TextRow>
           ))}
         </TextContainer>
       </ThemeStoryWrapper>
