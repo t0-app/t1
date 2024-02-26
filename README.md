@@ -29,6 +29,9 @@ Doc - https://rickandmortyapi.com/documentation/#rest
 # Creating a new branch
 
 `git checkout -b Feature/ROC-36`
+`git add .`
+`git commit -m "refact: color map"`
+`git push`
 
 # Aditional
 
