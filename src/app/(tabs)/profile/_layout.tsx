@@ -13,9 +13,9 @@ export default function ProfileLayout() {
       screenOptions={{
         headerTitle: pathname,
         headerStyle: {
-          backgroundColor: theme.color.gray.c25,
+          backgroundColor: theme.color.bg,
         },
-        headerTintColor: theme.color.gray.c900,
+        headerTintColor: theme.color.primary,
         headerLeft: () => (
           <Button
             text="Storybook"

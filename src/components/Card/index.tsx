@@ -6,7 +6,7 @@ const Container = styled.Pressable`
   flex-direction: row;
   padding: 16px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.color.gray.c400};
+  border-color: ${({ theme }) => theme.color.border};
   align-items: center;
 `;
 
@@ -14,7 +14,7 @@ const Image = styled.Image`
   width: 120px;
   height: 120px;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.color.gray.c400};
+  border-color: ${({ theme }) => theme.color.border};
 `;
 
 const Content = styled.View`

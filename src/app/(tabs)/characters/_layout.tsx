@@ -10,9 +10,9 @@ export default function CharactersLayout() {
       screenOptions={{
         headerTitle: pathname,
         headerStyle: {
-          backgroundColor: theme.color.gray.c25,
+          backgroundColor: theme.color.bg,
         },
-        headerTintColor: theme.color.gray.c900,
+        headerTintColor: theme.color.primary,
       }}
     />
   );

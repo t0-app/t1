@@ -1,23 +1,13 @@
 import 'styled-components';
 
-interface ColorSchema {
-  c0: string;
-  c25: string;
-  c50: string;
-  c100: string;
-  c200: string;
-  c300: string;
-  c400: string;
-  c500: string;
-  c600: string;
-  c700: string;
-  c800: string;
-  c900: string;
-}
-
-interface Color {
-  gray: ColorSchema;
-  primary: ColorSchema;
+interface ColorMap {
+  primary: string;
+  accent: string;
+  high: string;
+  medium: string;
+  low: string;
+  border: string;
+  bg: string;
 }
 
 interface FontInter {
@@ -32,7 +22,7 @@ interface FontFamily {
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    color: Color;
+    color: ColorMap;
     fontFamily: FontFamily;
   }
 }

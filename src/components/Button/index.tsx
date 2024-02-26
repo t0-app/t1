@@ -9,8 +9,8 @@ interface IContainer {
 
 const Container = styled.Pressable<IContainer>`
   background-color: ${({ type, theme }) =>
-    type === 'default' ? theme.color.gray.c900 : theme.color.gray.c0};
-  border-color: ${({ theme }) => theme.color.gray.c900};
+    type === 'default' ? theme.color.high : theme.color.bg};
+  border-color: ${({ theme }) => theme.color.high};
   border-width: ${({ type }) => (type === 'text' ? 0 : 2)}px;
   border-radius: 32px;
   padding: 6px 12px;

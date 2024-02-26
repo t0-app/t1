@@ -2,7 +2,7 @@ import styled, { DefaultTheme } from 'styled-components/native';
 
 export const SContainer = styled.SafeAreaView`
   flex: 1;
-  background-color: ${({ theme }) => theme.color.gray.c0};
+  background-color: ${({ theme }) => theme.color.bg};
 `;
 
 export const SContent = styled.View`
@@ -49,7 +49,7 @@ export const getFontSize = (ttype: TType): string => {
 
 export const Text = styled.Text<TextProps>`
   font-family: ${({ ttype = 'body', theme }) => getFontFamily(ttype, theme)};
-  color: ${({ light, theme }) => (light ? theme.color.gray.c50 : theme.color.gray.c900)};
+  color: ${({ light, theme }) => (light ? theme.color.bg : theme.color.high)};
   font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
   ${({ center }) => center && 'text-align: center;'}
   ${({ underline }) => underline && 'text-decoration: underline;'}

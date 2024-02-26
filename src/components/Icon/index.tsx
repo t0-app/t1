@@ -12,6 +12,6 @@ export interface IconProps {
 
 export default function Icon({ name, size = 24, color }: IconProps) {
   const theme = useTheme();
-  const defaultColor = theme.color.gray.c900;
+  const defaultColor = theme.color.high;
   return <MaterialIcons name={name} size={size} color={color ?? defaultColor} />;
 }

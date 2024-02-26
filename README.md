@@ -1,10 +1,10 @@
-# Template 1 - t1 App
+# T1 - Rick and Morty Template
 
-From https://github.com/lucasrocali/t1
+From https://github.com/t0-app/t1
 
 # Install
 
-`git clone https://github.com/lucasrocali/t1 && yarn`
+`git clone https://github.com/t0-app/t1 && yarn`
 
 # Usage
 
@@ -63,6 +63,6 @@ Packages:
 - [x] react-query
 - [x] i18n
 
-:bulb: `main` branch keeps the chore structure for @rocali/t1-app, on other branchs we add custom integrations like `with-auth`, `with-firebase`, `with-tailwind`, etc
+:bulb: `main` branch keeps the chore structure for @t0-app/t1-app, on other branchs we add custom integrations like `with-auth`, `with-firebase`, `with-tailwind`, etc
 
 :thinking: We could then rebase branchs from main and update the chore structure
