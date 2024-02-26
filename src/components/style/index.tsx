@@ -1,4 +1,5 @@
 import styled, { DefaultTheme } from 'styled-components/native';
+import { ColorMap } from 'src/config/theme/types';
 
 export const SContainer = styled.SafeAreaView`
   flex: 1;
@@ -18,11 +19,15 @@ export const SCContent = styled.View`
 
 export type TType = 'h1' | 'h2' | 'title' | 'body' | 'light';
 
+export type ColorKey = keyof ColorMap;
+
 export interface TextProps {
+  flex?: boolean;
   ttype?: TType;
   center?: boolean;
   light?: boolean;
   underline?: boolean;
+  color?: ColorKey;
 }
 
 const getFontFamily = (ttype: TType, theme: DefaultTheme): string => {
@@ -48,8 +53,10 @@ export const getFontSize = (ttype: TType): string => {
 };
 
 export const Text = styled.Text<TextProps>`
+  ${({ flex }) => flex && 'flex:1;'}
   font-family: ${({ ttype = 'body', theme }) => getFontFamily(ttype, theme)};
-  color: ${({ light, theme }) => (light ? theme.color.bg : theme.color.high)};
+  color: ${({ color, light, theme }) =>
+    color ? theme.color[color] : light ? theme.color.bg : theme.color.high};
   font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
   ${({ center }) => center && 'text-align: center;'}
   ${({ underline }) => underline && 'text-decoration: underline;'}
