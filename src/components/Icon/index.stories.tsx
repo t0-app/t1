@@ -30,6 +30,7 @@ const iconNames: IconName[] = [
   'group',
   'person',
   'map',
+  'movie',
 ];
 
 export const Default: Story = {

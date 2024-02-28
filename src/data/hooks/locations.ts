@@ -12,7 +12,10 @@ export function useLocationsQuery({
     getNextPageParam: (lastPage) => {
       const nextUrl = lastPage.info.next;
       if (nextUrl) {
-        return Number(nextUrl.charAt(nextUrl.length - 1));
+        const regex = /page=(\d+)/;
+        const match = nextUrl.match(regex);
+        //console.log(match);
+        if (match) return Number(match[1]);
       }
       return false;
     },

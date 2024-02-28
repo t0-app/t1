@@ -3,7 +3,9 @@ import { useLocationsQuery } from 'src/data/hooks/locations';
 import LocationsUI from 'src/screens/locations';
 
 export default function Locations() {
-  const { data, isLoading, isFetching, fetchNextPage, refetch } = useLocationsQuery({});
+  const { data, isLoading, isFetching, hasNextPage, fetchNextPage, refetch } = useLocationsQuery(
+    {},
+  );
 
   const locations =
     data?.pages.map((page) => page.results ?? []).reduce((arr, subarr) => arr.concat(subarr), []) ??
@@ -17,7 +19,7 @@ export default function Locations() {
       onSelectedLocation={(locationId) => router.push(`/locations/${locationId}`)}
       onRefresh={() => refetch()}
       onFetchMore={() => {
-        fetchNextPage();
+        hasNextPage && fetchNextPage();
       }}
     />
   );

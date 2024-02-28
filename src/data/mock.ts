@@ -1,4 +1,4 @@
-import { Character, Location } from './model';
+import { Character, Episode, Location } from './model';
 
 export const CHARACTER_1: Character = {
   id: 1,
@@ -97,4 +97,34 @@ export const LOCATION_3: Location = {
   residents: [],
   url: 'https://rickandmortyapi.com/api/location/3',
   created: '2017-11-10T13:08:13.191Z',
+};
+
+export const EPISODE_1: Episode = {
+  id: 1,
+  name: 'Pilot',
+  air_date: 'December 2, 2013',
+  episode: 'S01E01',
+  characters: [],
+  url: 'https://rickandmortyapi.com/api/episode/1',
+  created: '2017-11-10T12:56:33.798Z',
+};
+
+export const EPISODE_2: Episode = {
+  id: 2,
+  name: 'Lawnmower Dog',
+  air_date: 'December 9, 2013',
+  episode: 'S01E02',
+  characters: [],
+  url: 'https://rickandmortyapi.com/api/episode/2',
+  created: '2017-11-10T12:56:33.916Z',
+};
+
+export const EPISODE_3: Episode = {
+  id: 3,
+  name: 'Anatomy Park',
+  air_date: 'December 16, 2013',
+  episode: 'S01E03',
+  characters: [],
+  url: 'https://rickandmortyapi.com/api/episode/3',
+  created: '2017-11-10T12:56:34.022Z',
 };

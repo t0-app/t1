@@ -47,6 +47,13 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
+        name="episodes"
+        options={{
+          href: '/episodes',
+          tabBarIcon: ({ color }) => <Icon name="movie" color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           href: {
