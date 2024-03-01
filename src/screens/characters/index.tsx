@@ -2,7 +2,17 @@ import React, { useState } from 'react';
 import { FlatList, View } from 'react-native';
 import Card from 'src/components/Card';
 import Picker from 'src/components/Picker';
-import { Loading, RefreshControl, SContainer, SHeader, TextInput } from 'src/components/style';
+import {
+  Loading,
+  RefreshControl,
+  SContainer,
+  SContent,
+  SHTitle,
+  SHeader,
+  Text,
+  TextInput,
+} from 'src/components/style';
+import { t } from 'src/config/i18n';
 import { Character } from 'src/data/model';
 
 export interface CharactersUIProps {
@@ -28,8 +38,6 @@ export default function CharactersUI({
   name,
   type,
   species,
-  gender,
-  status,
   characters,
   isLoading = false,
   isFetching = false,
@@ -51,11 +59,12 @@ export default function CharactersUI({
       />
     );
   };
-  const headerList = () => {
-    return null;
-  };
+  const headerList = () => {};
   return (
     <SContainer>
+      <SHTitle>
+        <Text ttype="title">{t('filterBy')}</Text>
+      </SHTitle>
       <SHeader>
         <TextInput
           testID="text-input-name"
@@ -63,6 +72,7 @@ export default function CharactersUI({
           value={name}
           border={true}
           sizeLimit={true}
+          placeholderTextColor={'gray'}
           onChangeText={onSearchName}
         />
         <TextInput
@@ -70,6 +80,7 @@ export default function CharactersUI({
           placeholder="type"
           value={type}
           border={true}
+          placeholderTextColor={'gray'}
           sizeLimit={true}
           onChangeText={onSearchType}
         />
@@ -79,24 +90,13 @@ export default function CharactersUI({
           value={species}
           border={true}
           sizeLimit={true}
+          placeholderTextColor={'gray'}
           onChangeText={onSearchSpecie}
         />
-        <TextInput
-          testID="text-input-gender"
-          placeholder="gender"
-          value={gender}
-          border={true}
-          sizeLimit={true}
-          onChangeText={onSearchGender}
-        />
-        <TextInput
-          testID="text-input-status"
-          placeholder="status"
-          value={status}
-          border={true}
-          sizeLimit={true}
-          onChangeText={onSearchStatus}
-        />
+        <Picker options={['alive', 'dead', 'unknown']} onChange={onSearchStatus}></Picker>
+        <Picker
+          options={['male', 'female', 'genderless', 'unknown']}
+          onChange={onSearchGender}></Picker>
       </SHeader>
       <FlatList
         data={characters}

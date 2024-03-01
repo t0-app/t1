@@ -6,6 +6,11 @@ export const SContainer = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.color.bg};
 `;
 
+export const SHTitle = styled.View`
+  padding-top: 10px;
+  padding-left: 15px;
+`;
+
 export const SContent = styled.View`
   padding: 16px;
 `;
@@ -18,13 +23,13 @@ export const SCContent = styled.View`
 `;
 
 export const SHeader = styled.View`
+  padding: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  border: 1px ${({ theme }) => theme.color.gray.c900} solid;
-  gap: 10px;
-  background-color: ${({ theme }) => theme.color.gray.c0};
+  gap: 20px;
+  background-color: ${({ theme }) => theme.color.bg};
 `;
 
 export type TType = 'h1' | 'h2' | 'title' | 'body' | 'light';
@@ -43,7 +48,6 @@ export interface TextProps {
 export interface TextInputProps {
   ttype?: TType;
   center?: boolean;
-  light?: boolean;
   border?: boolean;
   sizeLimit?: boolean;
 }
@@ -92,17 +96,16 @@ export const Text = styled.Text<TextProps>`
 `;
 
 export const TextInput = styled.TextInput<TextInputProps>`
-  font-family: ${({ ttype = 'body', theme }) => getFontFamily(ttype, theme)};
+  font-family: ${({ ttype = 'title', theme }) => getFontFamily(ttype, theme)};
   ${({ center }) => center && 'text-align: center;'};
-  background-color: ${({ light, theme }) => (light ? theme.color.gray.c0 : theme.color.gray.c900)};
-  font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
-  color: ${({ light, theme }) => (light ? theme.color.gray.c900 : theme.color.gray.c0)};
+  background-color: ${({ theme }) => theme.color.bg};
+  font-size: ${({ ttype = 'title' }) => getFontSize(ttype)};
+  color: ${({ theme }) => theme.color.high};
   padding: ${({ ttype = 'body' }) => getPaddingSize(ttype)};
-  margin: 10px;
-  ${({ sizeLimit }) => sizeLimit && 'width: 100px;'}
+  ${({ sizeLimit }) => sizeLimit && 'width: 120px;'}
   ${({ sizeLimit }) => sizeLimit && 'height: 40px;'}
   ${({ center }) => center && 'text-align: center;'}
-  ${({ border, theme }) => border && `border: 2px ${theme.color.gray.c400} solid;`}
+  ${({ border, theme }) => border && `border: 2px ${theme.color.high} solid;`}
   border-radius: ${({ ttype = 'body' }) => getPaddingSize(ttype)};
 `;
 

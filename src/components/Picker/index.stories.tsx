@@ -28,12 +28,11 @@ export const Default: Story = {
     items: [
       {
         options: ['Option 1', 'Option 2', 'Option 3'],
-        placeholder: 'Picker 1',
-        border: true,
+        onChange(option) {},
       },
       {
         options: ['Option 1', 'Option 2'],
-        placeholder: 'Picker 2',
+        onChange(option) {},
       },
     ],
   },
