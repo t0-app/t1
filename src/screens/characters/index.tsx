@@ -59,7 +59,7 @@ export default function CharactersUI({
       />
     );
   };
-  const headerList = () => {};
+
   return (
     <SContainer>
       <SHTitle>
@@ -70,7 +70,6 @@ export default function CharactersUI({
           testID="text-input-name"
           placeholder="name"
           value={name}
-          border={true}
           sizeLimit={true}
           placeholderTextColor={'gray'}
           onChangeText={onSearchName}
@@ -79,7 +78,6 @@ export default function CharactersUI({
           testID="text-input-type"
           placeholder="type"
           value={type}
-          border={true}
           placeholderTextColor={'gray'}
           sizeLimit={true}
           onChangeText={onSearchType}
@@ -88,13 +86,16 @@ export default function CharactersUI({
           testID="text-input-species"
           placeholder="species"
           value={species}
-          border={true}
           sizeLimit={true}
           placeholderTextColor={'gray'}
           onChangeText={onSearchSpecie}
         />
-        <Picker options={['alive', 'dead', 'unknown']} onChange={onSearchStatus}></Picker>
         <Picker
+          testID="picker-status"
+          options={['alive', 'dead', 'unknown']}
+          onChange={onSearchStatus}></Picker>
+        <Picker
+          testID="picker-gender"
           options={['male', 'female', 'genderless', 'unknown']}
           onChange={onSearchGender}></Picker>
       </SHeader>
@@ -103,7 +104,6 @@ export default function CharactersUI({
         renderItem={renderItem}
         refreshControl={<RefreshControl refreshing={isLoading} onRefresh={onRefresh} />}
         ListFooterComponent={isFetching ? <Loading /> : null}
-        //ListHeaderComponent={headerList}
         keyExtractor={(character: Character) => `c_${character.id}`}
         onEndReachedThreshold={0.3}
         onEndReached={() => onFetchMore()}

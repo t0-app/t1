@@ -2,10 +2,10 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import ButtonPicker, { ButtonPickerProps } from './';
+import ButtonPicker, { ButtonPickerProps } from '.';
 
 const meta: Meta<StoryListProps<ButtonPickerProps>> = {
-  title: 'components/ButtonPicker',
+  title: 'components/Picker/ButtonPicker',
   component: StoryList,
   args: {
     Component: ButtonPicker,

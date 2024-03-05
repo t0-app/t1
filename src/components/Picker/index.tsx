@@ -3,40 +3,41 @@ import styled from 'styled-components/native';
 import { Text, TextInput } from 'src/components/style';
 import { t } from 'src/config/i18n';
 import Button from '../Button';
-import ButtonPicker from '../ButtonPicker';
+import ButtonPicker from './ButtonPicker';
 
 const Container = styled.Pressable`
   display: flex;
   flex-direction: row;
 `;
 export interface PickerProps {
+  testID?: string;
   options: string[];
   onChange: (option: string) => void;
 }
 
-export default function Picker({ options, onChange }: PickerProps) {
-  const [selectedIndex, setIndex] = useState(-1);
+export default function Picker({ testID, options, onChange }: PickerProps) {
+  const [selectedOption, setOption] = useState('');
 
-  const select = (index: number, option: string) => {
-    if (index === selectedIndex) {
-      setIndex(-1);
+  const select = (option: string) => {
+    if (option === selectedOption) {
+      setOption('');
       onChange('');
     } else {
       onChange(option);
-      setIndex(index);
+      setOption(option);
     }
   };
 
   return (
-    <Container>
+    <Container testID={testID}>
       {options.map((option, index) => (
         <ButtonPicker
           key={index}
           text={option}
           first={index === 0}
           last={index === options.length - 1}
-          type={index === selectedIndex ? 'selected' : 'unselected'}
-          onPress={() => select(index, option)}></ButtonPicker>
+          type={option === selectedOption ? 'selected' : 'unselected'}
+          onPress={() => select(option)}></ButtonPicker>
       ))}
     </Container>
   );

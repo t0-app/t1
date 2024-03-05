@@ -12,7 +12,7 @@ interface IContainer {
 const Container = styled.Pressable<IContainer>`
   background-color: ${({ type, theme }) =>
     type === 'selected' ? theme.color.high : theme.color.bg};
-  border: 1px solid ${({ theme }) => theme.color.high};
+  border: 2px solid ${({ theme }) => theme.color.high};
   color: ${({ type, theme }) => (type === 'selected' ? theme.color.high : theme.color.bg)};
   padding: 6px 12px;
   align-items: center;

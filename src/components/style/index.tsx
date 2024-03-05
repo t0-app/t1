@@ -46,9 +46,6 @@ export interface TextProps {
 }
 
 export interface TextInputProps {
-  ttype?: TType;
-  center?: boolean;
-  border?: boolean;
   sizeLimit?: boolean;
 }
 
@@ -74,17 +71,6 @@ export const getFontSize = (ttype: TType): string => {
   return fontFamilyMap[ttype];
 };
 
-export const getPaddingSize = (ttype: TType): string => {
-  const fontFamilyMap: { [key in TType]: string } = {
-    h1: '12px',
-    h2: '10px',
-    title: '9px',
-    body: '7px',
-    light: '5px',
-  };
-  return fontFamilyMap[ttype];
-};
-
 export const Text = styled.Text<TextProps>`
   ${({ flex }) => flex && 'flex:1;'}
   font-family: ${({ ttype = 'body', theme }) => getFontFamily(ttype, theme)};
@@ -96,17 +82,15 @@ export const Text = styled.Text<TextProps>`
 `;
 
 export const TextInput = styled.TextInput<TextInputProps>`
-  font-family: ${({ ttype = 'title', theme }) => getFontFamily(ttype, theme)};
-  ${({ center }) => center && 'text-align: center;'};
+  font-family: ${({ theme }) => theme.fontFamily.inter.bold};
   background-color: ${({ theme }) => theme.color.bg};
-  font-size: ${({ ttype = 'title' }) => getFontSize(ttype)};
+  font-size: 18px;
   color: ${({ theme }) => theme.color.high};
-  padding: ${({ ttype = 'body' }) => getPaddingSize(ttype)};
+  padding: 7px;
   ${({ sizeLimit }) => sizeLimit && 'width: 120px;'}
   ${({ sizeLimit }) => sizeLimit && 'height: 40px;'}
-  ${({ center }) => center && 'text-align: center;'}
-  ${({ border, theme }) => border && `border: 2px ${theme.color.high} solid;`}
-  border-radius: ${({ ttype = 'body' }) => getPaddingSize(ttype)};
+  ${({ theme }) => `border: 2px ${theme.color.high} solid;`}
+  border-radius: 7px;
 `;
 
 export const Loading = styled.ActivityIndicator`

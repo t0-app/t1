@@ -69,6 +69,51 @@ export const CHARACTER_3: Character = {
   created: '2017-11-04T20:51:31.373Z',
 };
 
+export const CHARACTER_4: Character = {
+  id: 4,
+  name: 'Beth Smith',
+  status: 'Alive',
+  species: 'Human',
+  type: '',
+  gender: 'Female',
+  origin: {
+    name: 'Earth (Replacement Dimension)',
+    url: 'https://rickandmortyapi.com/api/location/20',
+  },
+  location: {
+    name: 'Earth (Replacement Dimension)',
+    url: 'https://rickandmortyapi.com/api/location/20',
+  },
+  image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
+  episode: [],
+  url: 'https://rickandmortyapi.com/api/character/4',
+  created: '2017-11-04T19:22:43.665Z',
+};
+
+export const CHARACTER_7: Character = {
+  id: 7,
+  name: 'Abradolf Lincler',
+  status: 'unknown',
+  species: 'Human',
+  type: 'Genetic experiment',
+  gender: 'Male',
+  origin: {
+    name: 'Earth (Replacement Dimension)',
+    url: 'https://rickandmortyapi.com/api/location/20',
+  },
+  location: {
+    name: 'Testicle Monster Dimension',
+    url: 'https://rickandmortyapi.com/api/location/21',
+  },
+  image: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
+  episode: [
+    'https://rickandmortyapi.com/api/episode/10',
+    'https://rickandmortyapi.com/api/episode/11',
+  ],
+  url: 'https://rickandmortyapi.com/api/character/7',
+  created: '2017-11-04T19:59:20.523Z',
+};
+
 export const LOCATION_1: Location = {
   id: 1,
   name: 'Earth (C-137)',
