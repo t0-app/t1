@@ -73,12 +73,11 @@ function StyleView() {
           ))}
         </TextContainer>
       </ThemeStoryWrapper>
-      {textTypes.map((ttype) => (
-        <Text key={ttype} ttype={ttype}>{`Text-${ttype}-${getFontSize(ttype)}`}</Text>
-      ))}
-      {textTypes.map((ttype) => (
-        <TextInput placeholder="placeholder" key={ttype} />
-      ))}
+      <ThemeStoryWrapper>
+        <TextContainer>
+          <TextInput placeholder="placeholder" />
+        </TextContainer>
+      </ThemeStoryWrapper>
     </>
   );
 }
