@@ -1,5 +1,5 @@
 # from https://github.com/expo/expo-github-action?tab=readme-ov-file
-name: CI check
+name: ci check
 on: [pull_request]
 jobs:
   preview:
@@ -17,5 +17,11 @@ jobs:
       - name: 📦 Install dependencies
         run: yarn install
 
-      - name: 📦 CI check
-        run: yarn ci:check
+      - name: Lint check
+        run: yarn lint
+
+      - name: Typescript check
+        run: yarn ts:check
+
+      - name: Tests
+        run: yarn test:final
