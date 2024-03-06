@@ -9,7 +9,7 @@
     "web": "npx expo start --web",
     "web:clear": "npx expo start --web --clear",
     "prepare": "npx husky install",
-    "ts:check": "tsc",
+    "ts:check": "yarn tsc",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix --max-warnings=0",
     "test": "jest --watch --coverage=false --changedSince=origin/main",
@@ -80,6 +80,7 @@
     "typescript": "^5.1.3"
   },
   "private": false,
+  "license": "MIT",
   "eslintConfig": {
     "extends": "universe"
   },
