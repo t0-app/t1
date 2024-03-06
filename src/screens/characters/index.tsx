@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { FlatList, View } from 'react-native';
+import React from 'react';
+import { FlatList } from 'react-native';
 import Card from 'src/components/Card';
 import Picker from 'src/components/Picker';
 import {
   Loading,
   RefreshControl,
   SContainer,
-  SContent,
   SHTitle,
   SHeader,
   Text,
@@ -70,34 +69,36 @@ export default function CharactersUI({
           testID="text-input-name"
           placeholder="name"
           value={name}
-          sizeLimit={true}
-          placeholderTextColor={'gray'}
+          sizeLimit
+          placeholderTextColor="gray"
           onChangeText={onSearchName}
         />
         <TextInput
           testID="text-input-type"
           placeholder="type"
           value={type}
-          placeholderTextColor={'gray'}
-          sizeLimit={true}
+          placeholderTextColor="gray"
+          sizeLimit
           onChangeText={onSearchType}
         />
         <TextInput
           testID="text-input-species"
           placeholder="species"
           value={species}
-          sizeLimit={true}
-          placeholderTextColor={'gray'}
+          sizeLimit
+          placeholderTextColor="gray"
           onChangeText={onSearchSpecie}
         />
         <Picker
           testID="picker-status"
           options={['alive', 'dead', 'unknown']}
-          onChange={onSearchStatus}></Picker>
+          onChange={onSearchStatus}
+        />
         <Picker
           testID="picker-gender"
           options={['male', 'female', 'genderless', 'unknown']}
-          onChange={onSearchGender}></Picker>
+          onChange={onSearchGender}
+        />
       </SHeader>
       <FlatList
         data={characters}

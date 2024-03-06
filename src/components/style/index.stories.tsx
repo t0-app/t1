@@ -77,7 +77,7 @@ function StyleView() {
         <Text key={ttype} ttype={ttype}>{`Text-${ttype}-${getFontSize(ttype)}`}</Text>
       ))}
       {textTypes.map((ttype) => (
-        <TextInput placeholder="placeholder" border={true} key={ttype} ttype={ttype}></TextInput>
+        <TextInput placeholder="placeholder" key={ttype} />
       ))}
     </>
   );

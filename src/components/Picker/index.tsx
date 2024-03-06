@@ -1,8 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components/native';
-import { Text, TextInput } from 'src/components/style';
-import { t } from 'src/config/i18n';
-import Button from '../Button';
 import ButtonPicker from './ButtonPicker';
 
 const Container = styled.Pressable`
@@ -37,7 +34,8 @@ export default function Picker({ testID, options, onChange }: PickerProps) {
           first={index === 0}
           last={index === options.length - 1}
           type={option === selectedOption ? 'selected' : 'unselected'}
-          onPress={() => select(option)}></ButtonPicker>
+          onPress={() => select(option)}
+        />
       ))}
     </Container>
   );
