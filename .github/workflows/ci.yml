@@ -1,0 +1,27 @@
+# from https://github.com/expo/expo-github-action?tab=readme-ov-file
+name: ci check
+on: [pull_request]
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v4
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21
+          cache: yarn
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: Lint check
+        run: yarn lint
+
+      - name: Typescript check
+        run: yarn ts:check
+
+      - name: Tests
+        run: yarn test:final

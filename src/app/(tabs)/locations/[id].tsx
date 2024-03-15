@@ -3,7 +3,7 @@ import { useLocationQuery } from 'src/data/hooks/locations';
 import LocationUI from 'src/screens/location';
 
 export default function LocationDetail() {
-  const { id } = useLocalSearchParams<{ id: string }>();
-  const { data: location, isLoading } = useLocationQuery({ id });
+  const { id } = useLocalSearchParams<{ id?: string }>();
+  const { data: location, isLoading } = useLocationQuery({ id: id as string });
   return <LocationUI location={location} isLoading={isLoading} onGoBack={() => router.back()} />;
 }

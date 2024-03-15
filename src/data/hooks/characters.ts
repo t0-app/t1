@@ -15,7 +15,7 @@ type CharactersQueryOptions = {
 };
 
 export function useCharactersQuery({
-  vars: { name },
+  vars: { name, type, specie, status, gender },
   options = {
     getNextPageParam: (lastPage) => {
       const nextUrl = lastPage.info.next;
@@ -30,8 +30,8 @@ export function useCharactersQuery({
   },
 }: CharactersQueryOptions) {
   return useInfiniteQuery(
-    ['characters', name],
-    ({ pageParam = 1 }) => getCharacters({ page: pageParam, name }),
+    ['characters', name, type, specie, gender, status],
+    ({ pageParam = 1 }) => getCharacters({ page: pageParam, name, type, specie, gender, status }),
     options,
   );
 }

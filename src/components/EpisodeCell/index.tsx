@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { Text } from 'src/components/style';
-import { t } from 'src/config/i18n';
 import { Episode } from 'src/data/model';
 
 const Container = styled.Pressable`

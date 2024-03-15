@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import styled from 'styled-components/native';
 import { ThemeDarkWrapper, ThemeStoryWrapper, ThemeWrapper, dark, light } from 'src/config/theme';
-import { ColorKey, TType, Text, getFontSize } from './';
+import { ColorKey, TType, Text, TextInput, getFontSize } from './';
 
 const textTypes: TType[] = ['h1', 'h2', 'title', 'body', 'light'];
 
@@ -71,6 +71,11 @@ function StyleView() {
               ))}
             </TextRow>
           ))}
+        </TextContainer>
+      </ThemeStoryWrapper>
+      <ThemeStoryWrapper>
+        <TextContainer>
+          <TextInput placeholder="placeholder" />
         </TextContainer>
       </ThemeStoryWrapper>
     </>

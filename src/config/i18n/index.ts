@@ -10,6 +10,7 @@ const i18n = new I18n({
     login: 'Login',
     logout: 'Logout',
     profile: 'Profile',
+    filterBy: 'Filter by:',
   },
 });
 

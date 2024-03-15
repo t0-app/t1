@@ -5,9 +5,13 @@ import CharactersUI from 'src/screens/characters';
 
 export default function Characters() {
   const [name, setName] = useState('');
+  const [type, setType] = useState('');
+  const [specie, setSpecie] = useState('');
+  const [gender, setGender] = useState('');
+  const [status, setStatus] = useState('');
 
   const { data, isLoading, isFetching, hasNextPage, fetchNextPage, refetch } = useCharactersQuery({
-    vars: { name },
+    vars: { name, type, specie, gender, status },
   });
 
   const characters =
@@ -26,6 +30,10 @@ export default function Characters() {
         hasNextPage && fetchNextPage();
       }}
       onSearchName={setName}
+      onSearchType={setType}
+      onSearchSpecie={setSpecie}
+      onSearchGender={setGender}
+      onSearchStatus={setStatus}
     />
   );
 }

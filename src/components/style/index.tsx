@@ -6,6 +6,11 @@ export const SContainer = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.color.bg};
 `;
 
+export const SHTitle = styled.View`
+  padding-top: 10px;
+  padding-left: 15px;
+`;
+
 export const SContent = styled.View`
   padding: 16px;
 `;
@@ -15,6 +20,16 @@ export const SCContent = styled.View`
   padding: 16px;
   align-items: center;
   justify-content: center;
+`;
+
+export const SHeader = styled.View`
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: ${({ theme }) => theme.color.bg};
 `;
 
 export type TType = 'h1' | 'h2' | 'title' | 'body' | 'light';
@@ -28,6 +43,10 @@ export interface TextProps {
   light?: boolean;
   underline?: boolean;
   color?: ColorKey;
+}
+
+export interface TextInputProps {
+  sizeLimit?: boolean;
 }
 
 const getFontFamily = (ttype: TType, theme: DefaultTheme): string => {
@@ -60,6 +79,18 @@ export const Text = styled.Text<TextProps>`
   font-size: ${({ ttype = 'body' }) => getFontSize(ttype)};
   ${({ center }) => center && 'text-align: center;'}
   ${({ underline }) => underline && 'text-decoration: underline;'}
+`;
+
+export const TextInput = styled.TextInput<TextInputProps>`
+  font-family: ${({ theme }) => theme.fontFamily.inter.bold};
+  background-color: ${({ theme }) => theme.color.bg};
+  font-size: 18px;
+  color: ${({ theme }) => theme.color.high};
+  padding: 7px;
+  ${({ sizeLimit }) => sizeLimit && 'width: 120px;'}
+  ${({ sizeLimit }) => sizeLimit && 'height: 40px;'}
+  ${({ theme }) => `border: 2px ${theme.color.high} solid;`}
+  border-radius: 7px;
 `;
 
 export const Loading = styled.ActivityIndicator`
