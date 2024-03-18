@@ -11,6 +11,7 @@ const i18n = new I18n({
     logout: 'Logout',
     profile: 'Profile',
     filterBy: 'Filter by:',
+    episodes: 'Episodes',
   },
 });
 

@@ -15,6 +15,7 @@
     "test:debug": "jest -o --watch --coverage=false",
     "test:ci": "jest --coverage=false",
     "test:final": "jest",
+    "test:console": "jest --maxWorkers=2",
     "pre-commit:check": "yarn lint:fix && yarn ts:check",
     "ci:check": "yarn lint:fix && yarn ts:check && yarn test:final",
     "sb:load": "sb-rn-get-stories",
