@@ -8,6 +8,7 @@ export const SContainer = styled.SafeAreaView`
 
 export const SHTitle = styled.View`
   padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 15px;
 `;
 
@@ -23,7 +24,8 @@ export const SCContent = styled.View`
 `;
 
 export const SHeader = styled.View`
-  padding: 15px;
+  padding-inline: 15px;
+  padding-bottom: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;

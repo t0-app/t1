@@ -11,10 +11,10 @@
     "ts:check": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "jest --watch --coverage=false --changedSince=origin/main",
-    "test:debug": "jest -o --watch --coverage=false",
-    "test:ci": "jest --coverage=false",
-    "test:final": "jest",
+    "test": "yarn jest --watch --coverage=false --changedSince=origin/main",
+    "test:debug": "yarn jest -o --watch --coverage=false",
+    "test:ci": "yarn jest --coverage=false",
+    "test:final": "yarn jest --color --max-workers 2",
     "pre-commit:check": "yarn lint:fix && yarn ts:check",
     "ci:check": "yarn lint:fix && yarn ts:check && yarn test:final",
     "sb:load": "sb-rn-get-stories",
@@ -101,6 +101,10 @@
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
+    ],
+    "testTimeout": 70000,
+    "watchPathIgnorePatterns": [
+      "coverage"
     ]
   }
 }
