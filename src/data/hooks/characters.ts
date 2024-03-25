@@ -4,8 +4,10 @@ import {
   CharacterData,
   CharactersData,
   CharactersVars,
+  MultipleCharactersData,
   getCharacter,
   getCharacters,
+  getMultipleCharacters,
 } from '../operations/characters';
 
 //useCharactersQuery
@@ -44,4 +46,32 @@ type CharacterQueryOptions = {
 
 export function useCharacterQuery({ id, options = {} }: CharacterQueryOptions) {
   return useQuery(['character', [id]], () => getCharacter(id), options);
+}
+
+//useMultipleCharactersQuery
+type MultipleCharactersQueryOptions = {
+  characters: string[];
+  options?: Omit<UseQueryOptions<MultipleCharactersData, AxiosError>, 'queryKey' | 'queryFn'>;
+};
+
+export function useMultipleCharactersQuery({
+  characters,
+  options,
+}: MultipleCharactersQueryOptions) {
+  const numbers: number[] = characters.map((character) => {
+    const numberSplit = character.split('/');
+    const characterNumber = numberSplit[numberSplit.length - 1];
+    return parseInt(characterNumber, 10);
+  });
+
+  if (numbers.length > 0) {
+    numbers.push(0);
+  }
+
+  const numbersKeys: string = numbers.join(',');
+  return useQuery(
+    ['characters', numbersKeys],
+    () => getMultipleCharacters({ numbersKeys }),
+    options,
+  );
 }

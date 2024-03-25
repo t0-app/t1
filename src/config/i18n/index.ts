@@ -12,6 +12,7 @@ const i18n = new I18n({
     profile: 'Profile',
     filterBy: 'Filter by:',
     episodes: 'Episodes',
+    residents: 'Residents',
   },
 });
 

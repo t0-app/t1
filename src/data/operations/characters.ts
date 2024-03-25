@@ -36,3 +36,17 @@ export async function getCharacter(id: string): Promise<CharacterData> {
   const { data } = await axiosInstance.get<CharacterData>(`/character/${id}`);
   return data;
 }
+
+//getMultipleCharacters
+export interface MultipleCharactersVars {
+  numbersKeys: string;
+}
+
+export type MultipleCharactersData = Character[];
+
+export async function getMultipleCharacters({
+  numbersKeys,
+}: MultipleCharactersVars): Promise<MultipleCharactersData> {
+  const { data } = await axiosInstance.get<MultipleCharactersData>(`/character/${numbersKeys}`);
+  return data;
+}
