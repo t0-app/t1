@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { ThemeWrapper } from 'src/config/theme';
-import { EPISODE_3 } from 'src/data/mock';
+import { CHARACTER_1, CHARACTER_2, CHARACTER_3, EPISODE_3 } from 'src/data/mock';
 import EpisodeUI, { EpisodeUIProps } from './';
 
 const meta: Meta<EpisodeUIProps> = {
@@ -23,6 +23,7 @@ type Story = StoryObj<EpisodeUIProps>;
 export const Default: Story = {
   args: {
     episode: EPISODE_3,
+    characters: [CHARACTER_1, CHARACTER_2, CHARACTER_3],
   },
 };
 
