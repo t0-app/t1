@@ -120,7 +120,11 @@ export const LOCATION_1: Location = {
   name: 'Earth (C-137)',
   type: 'Planet',
   dimension: 'Dimension C-137',
-  residents: [],
+  residents: [
+    'https://rickandmortyapi.com/api/character/38',
+    'https://rickandmortyapi.com/api/character/45',
+    'https://rickandmortyapi.com/api/character/71',
+  ],
   url: 'https://rickandmortyapi.com/api/location/1',
   created: '2017-11-10T12:42:04.162Z',
 };
@@ -130,7 +134,7 @@ export const LOCATION_2: Location = {
   name: 'Abadango',
   type: 'Cluster',
   dimension: 'unknown',
-  residents: [],
+  residents: ['https://rickandmortyapi.com/api/character/6'],
   url: 'https://rickandmortyapi.com/api/location/2',
   created: '2017-11-10T13:06:38.182Z',
 };
@@ -140,7 +144,10 @@ export const LOCATION_3: Location = {
   name: 'Citadel of Ricks',
   type: 'Space station',
   dimension: 'unknown',
-  residents: [],
+  residents: [
+    'https://rickandmortyapi.com/api/character/1',
+    'https://rickandmortyapi.com/api/character/2',
+  ],
   url: 'https://rickandmortyapi.com/api/location/3',
   created: '2017-11-10T13:08:13.191Z',
 };

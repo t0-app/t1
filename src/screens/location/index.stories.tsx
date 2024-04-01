@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react-native';
 import React from 'react';
 import { ThemeWrapper } from 'src/config/theme';
-import { LOCATION_1 } from 'src/data/mock';
+import { CHARACTER_1, CHARACTER_7, LOCATION_1 } from 'src/data/mock';
 import LocationUI, { LocationUIProps } from './';
 
 const meta: Meta<LocationUIProps> = {
@@ -26,6 +26,7 @@ type Story = StoryObj<LocationUIProps>;
 export const Default: Story = {
   args: {
     location: LOCATION_1,
+    residents: [CHARACTER_1, CHARACTER_7],
   },
 };
 
