@@ -1,6 +1,8 @@
 import { FlatList } from 'react-native';
 import EpisodeCell from 'src/components/EpisodeCell';
+import Header from 'src/components/Header';
 import { Loading, RefreshControl, SContainer } from 'src/components/style';
+import { t } from 'src/config/i18n';
 import { Episode } from 'src/data/model';
 
 export interface EpisodesUIProps {
@@ -32,6 +34,7 @@ export default function EpisodesUI({
 
   return (
     <SContainer>
+      <Header name={t('episodes')} />
       <FlatList
         data={episodes}
         renderItem={renderItem}

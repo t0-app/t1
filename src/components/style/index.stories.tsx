@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import styled from 'styled-components/native';
 import { ThemeDarkWrapper, ThemeStoryWrapper, ThemeWrapper, dark, light } from 'src/config/theme';

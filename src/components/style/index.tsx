@@ -24,14 +24,16 @@ export const SCContent = styled.View`
 `;
 
 export const SHeader = styled.View`
-  padding-inline: 15px;
-  padding-bottom: 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  padding: 16px;
+
+  gap: 8px;
   background-color: ${({ theme }) => theme.color.bg};
+`;
+
+export const SRow = styled.View`
+  flex-direction: row;
+
+  gap: 8px;
 `;
 
 export type TType = 'h1' | 'h2' | 'title' | 'body' | 'light';

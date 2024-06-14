@@ -1,10 +1,19 @@
-/* eslint-env node */
+// Learn more https://docs.expo.io/guides/customizing-metro
+const path = require('path');
 const { getDefaultConfig } = require('expo/metro-config');
 
-const config = getDefaultConfig(__dirname, {
-  isCSSEnabled: true,
+const { generate } = require('@storybook/react-native/scripts/generate');
+
+generate({
+  configPath: path.resolve(__dirname, './.storybook'),
 });
 
-config.resolver.resolverMainFields.unshift('sbmodern');
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname);
+
+config.transformer.unstable_allowRequireContext = true;
+
+config.resolver.sourceExts.push('cjs');
+config.resolver.sourceExts.push('mjs');
 
 module.exports = config;

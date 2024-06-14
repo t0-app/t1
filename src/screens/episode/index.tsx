@@ -1,6 +1,7 @@
 import { FlatList, RefreshControl } from 'react-native';
 import Card from 'src/components/Card';
 import EpisodeCell from 'src/components/EpisodeCell';
+import Header from 'src/components/Header';
 import { Loading, SContainer, SHTitle, Text } from 'src/components/style';
 import { t } from 'src/config/i18n';
 import { Character, Episode } from 'src/data/model';
@@ -38,6 +39,8 @@ export default function EpisodeUI({
 
   return (
     <SContainer>
+      <Header name={episode?.name ?? ''} />
+
       {isLoading ?? !episode ? (
         <Loading />
       ) : (

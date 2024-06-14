@@ -7,7 +7,7 @@ import { t } from 'src/config/i18n';
 
 const Container = styled.Pressable`
   border-width: 1px;
-  border-color: ${({ theme }) => theme.color.gray.c400};
+  border-color: ${({ theme }) => theme.color.border};
   padding: 16px;
   align-items: center;
 `;

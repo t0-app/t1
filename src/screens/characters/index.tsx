@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 import Card from 'src/components/Card';
+import Header from 'src/components/Header';
 import Picker from 'src/components/Picker';
 import {
   Loading,
@@ -8,6 +9,7 @@ import {
   SContainer,
   SHTitle,
   SHeader,
+  SRow,
   Text,
   TextInput,
 } from 'src/components/style';
@@ -61,49 +63,57 @@ export default function CharactersUI({
 
   return (
     <SContainer>
-      <SHTitle>
-        <Text ttype="title">{t('filterBy')}</Text>
-      </SHTitle>
-      <SHeader>
-        <TextInput
-          testID="text-input-name"
-          placeholder="name"
-          value={name}
-          sizeLimit
-          placeholderTextColor="gray"
-          onChangeText={onSearchName}
-        />
-        <TextInput
-          testID="text-input-type"
-          placeholder="type"
-          value={type}
-          placeholderTextColor="gray"
-          sizeLimit
-          onChangeText={onSearchType}
-        />
-        <TextInput
-          testID="text-input-species"
-          placeholder="species"
-          value={species}
-          sizeLimit
-          placeholderTextColor="gray"
-          onChangeText={onSearchSpecie}
-        />
-        <Picker
-          testID="picker-status"
-          options={['alive', 'dead', 'unknown']}
-          onChange={onSearchStatus}
-        />
-        <Picker
-          testID="picker-gender"
-          options={['male', 'female', 'genderless', 'unknown']}
-          onChange={onSearchGender}
-        />
-      </SHeader>
+      <Header name={t('characters')} />
       <FlatList
         data={characters}
         renderItem={renderItem}
         refreshControl={<RefreshControl refreshing={isLoading} onRefresh={onRefresh} />}
+        ListHeaderComponent={
+          <>
+            <SHTitle>
+              <Text ttype="title">{t('filterBy')}</Text>
+            </SHTitle>
+            <SHeader>
+              <SRow>
+                <TextInput
+                  testID="text-input-name"
+                  placeholder="name"
+                  value={name}
+                  sizeLimit
+                  placeholderTextColor="gray"
+                  onChangeText={onSearchName}
+                />
+                <TextInput
+                  testID="text-input-type"
+                  placeholder="type"
+                  value={type}
+                  placeholderTextColor="gray"
+                  sizeLimit
+                  onChangeText={onSearchType}
+                />
+                <TextInput
+                  testID="text-input-species"
+                  placeholder="species"
+                  value={species}
+                  sizeLimit
+                  placeholderTextColor="gray"
+                  onChangeText={onSearchSpecie}
+                />
+              </SRow>
+
+              <Picker
+                testID="picker-status"
+                options={['alive', 'dead', 'unknown']}
+                onChange={onSearchStatus}
+              />
+              <Picker
+                testID="picker-gender"
+                options={['male', 'female', 'genderless', 'unknown']}
+                onChange={onSearchGender}
+              />
+            </SHeader>
+          </>
+        }
         ListFooterComponent={isFetching ? <Loading /> : null}
         keyExtractor={(character: Character) => `c_${character.id}`}
         onEndReachedThreshold={0.3}
