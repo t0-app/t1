@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ThemeWrapper } from 'src/config/theme';
 import { CHARACTER_1, CHARACTER_2, CHARACTER_3, EPISODE_3 } from 'src/data/mock';

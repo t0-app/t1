@@ -1,6 +1,8 @@
 import { FlatList } from 'react-native';
+import Header from 'src/components/Header';
 import LocationCell from 'src/components/LocationCell';
 import { Loading, RefreshControl, SContainer } from 'src/components/style';
+import { t } from 'src/config/i18n';
 import { Location } from 'src/data/model';
 
 export interface LocationsUIProps {
@@ -32,6 +34,7 @@ export default function LocationsUI({
 
   return (
     <SContainer>
+      <Header name={t('locations')} />
       <FlatList
         data={locations}
         renderItem={renderItem}

@@ -1,7 +1,7 @@
 ---
 to: src/components/<%= name %>/index.stories.tsx
 ---
-import { Meta, StoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';

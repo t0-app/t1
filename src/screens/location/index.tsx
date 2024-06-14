@@ -1,5 +1,6 @@
 import { FlatList } from 'react-native';
 import Card from 'src/components/Card';
+import Header from 'src/components/Header';
 import LocationCell from 'src/components/LocationCell';
 import { Loading, RefreshControl, SContainer, SHTitle, Text } from 'src/components/style';
 import { t } from 'src/config/i18n';
@@ -38,6 +39,7 @@ export default function LocationUI({
 
   return (
     <SContainer>
+      <Header name={location?.name ?? ''} />
       {isLoading ?? !location ? (
         <Loading />
       ) : (

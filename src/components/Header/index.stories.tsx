@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { StoryList, StoryListProps } from 'src/components/helper';
 import { ThemeWrapper } from 'src/config/theme';
-import Base, { BaseProps } from './';
+import Header, { HeaderProps } from './';
 
-const meta: Meta<StoryListProps<BaseProps>> = {
-  title: 'components/Base',
+const meta: Meta<StoryListProps<HeaderProps>> = {
+  title: 'components/Header',
   component: StoryList,
   args: {
-    Component: Base,
+    Component: Header,
   },
   decorators: [
     (Story) => (
@@ -21,16 +21,24 @@ const meta: Meta<StoryListProps<BaseProps>> = {
 
 export default meta;
 
-type Story = StoryObj<StoryListProps<BaseProps>>;
+type Story = StoryObj<StoryListProps<HeaderProps>>;
 
 export const Default: Story = {
   args: {
     items: [
       {
-        text: 'Base 1',
+        name: 'Characters',
       },
       {
-        text: 'Base 2',
+        name: 'Character',
+        onGoBack: () => {},
+      },
+      {
+        name: 'Profile',
+        buttonIcons: [
+          { name: 'list', onPress: () => {} },
+          { name: 'logout', onPress: () => {} },
+        ],
       },
     ],
   },

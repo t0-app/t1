@@ -7,6 +7,7 @@ const i18n = new I18n({
     launch: 'Launch',
     character: 'Character',
     characters: 'Characters',
+    locations: 'Locations',
     login: 'Login',
     logout: 'Logout',
     profile: 'Profile',

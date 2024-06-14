@@ -1,7 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react-native';
+import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { ThemeWrapper } from 'src/config/theme';
-import { CHARACTER_1 } from 'src/data/mock';
 import ProfileUI, { ProfileUIProps } from './';
 
 const meta: Meta<ProfileUIProps> = {
@@ -22,13 +21,7 @@ type Story = StoryObj<ProfileUIProps>;
 
 export const Default: Story = {
   args: {
-    character: CHARACTER_1,
-  },
-};
-
-export const Loading: Story = {
-  args: {
-    character: undefined,
-    isLoading: true,
+    onStorybook: () => {},
+    onLogout: () => {},
   },
 };
