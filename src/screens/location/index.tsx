@@ -41,7 +41,7 @@ export default function LocationUI({
   const headerItem = () => {
     return (
       <>
-        {!!location ? <LocationCell location={location} testID={`cell-${location.id}`} /> : null}
+        {location ? <LocationCell location={location} testID={`cell-${location.id}`} /> : null}
         <SHTitle>
           <Text ttype="title">{t('residents')}</Text>
         </SHTitle>

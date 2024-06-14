@@ -41,7 +41,7 @@ export default function CharacterUI({
   const headerItem = () => {
     return (
       <>
-        {!!character ? <Card testID={`card-${character.id}`} character={character} /> : null}
+        {character ? <Card testID={`card-${character.id}`} character={character} /> : null}
         <SHTitle>
           <Text ttype="title">{t('episodes')}</Text>
         </SHTitle>

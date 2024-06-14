@@ -41,7 +41,7 @@ export default function EpisodeUI({
   const headerItem = () => {
     return (
       <>
-        {!!episode ? <EpisodeCell episode={episode} testID={`cell-${episode.id}`} /> : null}
+        {episode ? <EpisodeCell episode={episode} testID={`cell-${episode.id}`} /> : null}
         <SHTitle>
           <Text ttype="title">{t('characters')}</Text>
         </SHTitle>
