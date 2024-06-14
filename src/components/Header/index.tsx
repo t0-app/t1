@@ -31,7 +31,7 @@ export default function Header({ name, buttonIcons, onGoBack }: HeaderProps) {
         {name}
       </Text>
       {buttonIcons?.map((buttonIcon) => (
-        <ButtonIcon name={buttonIcon.name} onPress={buttonIcon.onPress} />
+        <ButtonIcon key={buttonIcon.name} name={buttonIcon.name} onPress={buttonIcon.onPress} />
       ))}
     </Container>
   );

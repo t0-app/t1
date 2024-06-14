@@ -15,6 +15,7 @@ export interface CharacterUIProps {
   isFetchingEpisodes?: boolean;
   onGoBack: () => void;
   onRefresh: () => void;
+  onSelectedEpisode: (episodeId: number) => void;
 }
 
 export default function CharacterUI({
@@ -23,37 +24,45 @@ export default function CharacterUI({
   isLoading = false,
   isLoadingEpisodes = false,
   isFetchingEpisodes = false,
+  onGoBack,
   onRefresh,
+  onSelectedEpisode,
 }: CharacterUIProps) {
   const renderItem = ({ item: episode }: { item: Episode }) => {
-    return <EpisodeCell testID={`cell-${episode.id}`} episode={episode} />;
+    return (
+      <EpisodeCell
+        testID={`cell-${episode.id}`}
+        episode={episode}
+        onPress={() => onSelectedEpisode(episode.id)}
+      />
+    );
   };
 
   const headerItem = () => {
     return (
-      <SHTitle>
-        <Text ttype="title">{t('episodes')}</Text>
-      </SHTitle>
+      <>
+        {!!character ? <Card testID={`card-${character.id}`} character={character} /> : null}
+        <SHTitle>
+          <Text ttype="title">{t('episodes')}</Text>
+        </SHTitle>
+      </>
     );
   };
 
   return (
     <SContainer>
-      <Header name={character?.name ?? ''} />
+      <Header name={character?.name ?? ''} onGoBack={onGoBack} />
       {isLoading ?? !character ? (
         <Loading />
       ) : (
-        <>
-          <Card testID={`card-${character.id}`} character={character} />
-          <FlatList
-            data={episodes}
-            renderItem={renderItem}
-            refreshControl={<RefreshControl refreshing={isLoadingEpisodes} onRefresh={onRefresh} />}
-            ListFooterComponent={isFetchingEpisodes ? <Loading /> : null}
-            ListHeaderComponent={headerItem}
-            keyExtractor={(episode: Episode) => `c_${episode.id}`}
-          />
-        </>
+        <FlatList
+          data={episodes}
+          renderItem={renderItem}
+          refreshControl={<RefreshControl refreshing={isLoadingEpisodes} onRefresh={onRefresh} />}
+          ListFooterComponent={isFetchingEpisodes ? <Loading /> : null}
+          ListHeaderComponent={headerItem}
+          keyExtractor={(episode: Episode) => `c_${episode.id}`}
+        />
       )}
     </SContainer>
   );

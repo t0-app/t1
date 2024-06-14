@@ -25,8 +25,9 @@ export default function LocationDetail() {
       isLoading={isLoading}
       isLoadingResidents={isLoadingResidents}
       isFetchingResidents={isFetchingResidents}
-      onGoBack={() => router.back}
+      onGoBack={() => router.back()}
       onRefresh={() => refetch()}
+      onSelectedCharacter={(characterId) => router.push(`/characters/${characterId}`)}
     />
   );
 }

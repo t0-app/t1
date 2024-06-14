@@ -24,8 +24,9 @@ export default function EpisodeDetail() {
       isLoading={isLoading}
       isLoadingCharacters={isLoadingCharacters}
       isFetchingCharacters={isFetchingCharacters}
-      onGoBack={() => router.back}
+      onGoBack={() => router.back()}
       onRefresh={() => refetch()}
+      onSelectedCharacter={(characterId) => router.push(`/characters/${characterId}`)}
     />
   );
 }

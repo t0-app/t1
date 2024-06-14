@@ -15,6 +15,7 @@ export interface LocationUIProps {
   isFetchingResidents?: boolean;
   onGoBack: () => void;
   onRefresh: () => void;
+  onSelectedCharacter: (characterId: number) => void;
 }
 
 export default function LocationUI({
@@ -23,39 +24,45 @@ export default function LocationUI({
   isLoading = false,
   isLoadingResidents = false,
   isFetchingResidents = false,
+  onGoBack,
   onRefresh,
+  onSelectedCharacter,
 }: LocationUIProps) {
   const renderItem = ({ item: character }: { item: Character }) => {
-    return <Card testID={`card-${character.id}`} character={character} />;
+    return (
+      <Card
+        testID={`card-${character.id}`}
+        character={character}
+        onPress={() => onSelectedCharacter(character.id)}
+      />
+    );
   };
 
   const headerItem = () => {
     return (
-      <SHTitle>
-        <Text ttype="title">{t('residents')}</Text>
-      </SHTitle>
+      <>
+        {!!location ? <LocationCell location={location} testID={`cell-${location.id}`} /> : null}
+        <SHTitle>
+          <Text ttype="title">{t('residents')}</Text>
+        </SHTitle>
+      </>
     );
   };
 
   return (
     <SContainer>
-      <Header name={location?.name ?? ''} />
+      <Header name={location?.name ?? ''} onGoBack={onGoBack} />
       {isLoading ?? !location ? (
         <Loading />
       ) : (
-        <>
-          <LocationCell location={location} testID={`cell-${location.id}`} />
-          <FlatList
-            data={residents}
-            renderItem={renderItem}
-            refreshControl={
-              <RefreshControl refreshing={isLoadingResidents} onRefresh={onRefresh} />
-            }
-            ListFooterComponent={isFetchingResidents ? <Loading /> : null}
-            ListHeaderComponent={headerItem}
-            keyExtractor={(character: Character) => `c_${character.id}`}
-          />
-        </>
+        <FlatList
+          data={residents}
+          renderItem={renderItem}
+          refreshControl={<RefreshControl refreshing={isLoadingResidents} onRefresh={onRefresh} />}
+          ListFooterComponent={isFetchingResidents ? <Loading /> : null}
+          ListHeaderComponent={headerItem}
+          keyExtractor={(character: Character) => `c_${character.id}`}
+        />
       )}
     </SContainer>
   );
